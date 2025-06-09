@@ -1,5 +1,5 @@
 
-`timescale 1s / 1ms
+`timescale 1ms / 1us
 
 module bcd_to_7seg(
     input [3:0] bcd_in,

@@ -1,5 +1,5 @@
 
-`timescale 1s / 1ms
+`timescale 1ms / 1us
 
 module two_to_one_mux(
     input wire a,

@@ -1,5 +1,5 @@
 
-`timescale 1s / 1ms
+`timescale 1ms / 1us
 
 module decade_counter(input reset_n, input clk, output [3:0] count);
 
