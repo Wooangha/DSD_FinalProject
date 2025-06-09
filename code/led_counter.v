@@ -4,7 +4,7 @@
 module led_counter(
     input wire reset_n,
     input wire clk,
-    output wire [2:0] led_count,
+    output wire [2:0] led_count
 );
     edge_trigger_T_FF t_ff(
         .reset_n(reset_n),

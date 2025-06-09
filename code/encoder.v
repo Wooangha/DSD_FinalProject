@@ -3,7 +3,7 @@
 
 module encoder8to3 (
     input  [6:0] in,
-    output [2:0] out,
+    output [2:0] out
 );
     // Priority encoder logic
     // in = {reset_blue, reset_red, decision, up, down, left, right}

@@ -4,7 +4,7 @@
 module led_additional (
     input [9:0] state,
     input [2:0] led_sel,
-    output [16:0] led_out,
+    output [16:0] led_out
 );
     // led_out = 
     // {2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 
@@ -37,8 +37,8 @@ endmodule
 
 module basicled (
 
-    input cot [2:0],
-    output led [16:0]
+    input [2:0] cot,
+    output [16:0] led
 
 );
 
@@ -48,18 +48,18 @@ module basicled (
     assign led[13]=0;
     assign led[12]=0;
 
-    assign led [11]= (~cot(2))&cot(1)&cot(0);
-    assign led [10]= cot(2)&(~cot(1))&cot(0);
-    assign led [9]= (~cot(2))&(~cot(1))&(~cot(0))|(~cot(2))&cot(1)&cot(0)|cot(2)&cot(1)&(~cot(0));
+    assign led [11]= (~cot[2])&cot[1]&cot[0];
+    assign led [10]= cot[2]&(~cot[1])&cot[0];
+    assign led [9]= (~cot[2])&(~cot[1])&(~cot[0])|(~cot[2])&cot[1]&cot[0]|cot[2]&cot[1]&(~cot[0]);
     assign led [8]= 0;
-    assign led [7]= (~cot(2))&cot(1)&cot(0);
-    assign led [6]= cot(2)&(~cot(1))&cot(0);
-    assign led [5]= 0
-    assign led [4]= cot(2)&(~cot(1))&(~cot(0));
-    assign led [3]= (~cot(2))&cot(1)&(~cot(0));
-    assign led [2]= (~cot(2))&(~cot(1))&cot(0)|cot(2)&(~cot(1))&(~cot(0))|cot(2)&cot(1)&cot(0);
-    assign led [1]= (~cot(2))&cot(1)&(~cot(0));
-    assign led [0]= cot(2)&(~cot(1))&(~cot(0));
+    assign led [7]= (~cot[2])&cot[1]&cot[0];
+    assign led [6]= cot[2]&(~cot[1])&cot[0];
+    assign led [5]= 0;
+    assign led [4]= cot[2]&(~cot[1])&(~cot[0]);
+    assign led [3]= (~cot[2])&cot[1]&(~cot[0]);
+    assign led [2]= (~cot[2])&(~cot[1])&cot[0]|cot[2]&(~cot[1])&(~cot[0])|cot[2]&cot[1]&cot[0];
+    assign led [1]= (~cot[2])&cot[1]&(~cot[0]);
+    assign led [0]= cot[2]&(~cot[1])&(~cot[0]);
 
 endmodule
 
@@ -77,7 +77,7 @@ module led_output (
         .led_out(additional_led_out)
     );
 
-    basicled default (
+    basicled default_ (
         .cot(led_sel),
         .led(default_led_out)
     );
