@@ -1,3 +1,6 @@
+
+`timescale 1s / 1ms
+
 module encoder8to3 (
     input  [6:0] in,
     output [2:0] out,
