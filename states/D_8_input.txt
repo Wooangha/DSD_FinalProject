@@ -1,0 +1,1 @@
+(K & ~L & M) | (K & L & ~M) | (~D & F & G & J) | (~E & F & ~J) | (B & ~K) | (B & M) | (~C & ~H & K & ~L) | (B & ~E & ~F & J) | (B & ~D & ~H & ~I) | (B & E & ~H & ~J) | (~E & ~G & K & ~L) | (~B & ~E & I & ~J & K & ~L) | (~B & ~D & I & J & K & ~L) | (~C & D & E & ~F & ~J) | (~B & D & E & ~I & K & ~L) | (B & D & I & J)

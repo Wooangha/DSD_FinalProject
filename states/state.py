@@ -1,6 +1,10 @@
 import pandas as pd
 import re
 
+from typing import Callable
+
+from qm.qm import qm
+
 COLUMNS = [
     "Present",
     "Next_INPUT=X",
@@ -151,6 +155,51 @@ def add_dff(input_path: str, output_path: str):
             f = lambda x : x[9 - i]
             df[f'D-{i}-{c}'] = df[c].apply(f)
     df.to_csv(output_path, index=False, encoding='utf-8-sig')
+
+def get_minterms(df: pd.DataFrame, d_num: int):
+    """
+    minterms를 구한다. {STATE, INPUT} 순서이다. {Most Significant Bit, ... Least Significant Bit} 순서로 되어 있다.
+    """
+    str2int : Callable[[str], int] = lambda s: int(s, 2)
+    int2str : Callable[[int], str] = lambda i: bin(i)[2:].zfill(3)
+    minterms = set()
+    doncares = set()
+    maxterms = set()
+    
+    for i in range(8):
+        input_num = int2str(i)
+        check = f'D-{d_num}-{input_num}'
+        if check not in df.columns:
+            raise ValueError(f"Column {check} not found in the DataFrame.")
+        for i in range(len(df)):
+            row = df.iloc[i]
+            if row[check] == '1':
+                minterms.add(str2int(row['Present'] + input_num))
+            elif row[check] == '0':
+                maxterms.add(str2int(row['Present'] + input_num))
+    doncares = {i for i in range(1<<13)} # 13 bits for 3 bits of input and 10 bits of state
+    doncares = doncares - minterms - maxterms
+    print(f"minterms: {minterms}")
+    print(f"doncares: {doncares}")
+    # res = qm(list(minterms), list(doncares))
+    return (minterms, doncares)
+"""
+import state as st
+st.get_minterms_all("DFF.csv", "result.txt")
+"""
+def get_minterms_all(input_path: str, output_path: str):
+    f = open(output_path, 'w')
+    df = pd.read_csv(input_path, sep=",", dtype=str, keep_default_na=False)
+    for i in reversed(range(0, 10)):
+        with open(f"D_{i}_"+output_path, 'w') as f:
+            m, d = get_minterms(df, i)
+            f.write('13\n')
+            for mm in m:
+                f.write(f'm {mm}\n')
+            for dd in d:
+                f.write(f'd {dd}\n')
+            # f.write(f'D{i}: {s}  \n')
+    f.close()
 
 if __name__ == "__main__":
     df = pd.read_csv("merged_state_transition.csv", sep=",")
