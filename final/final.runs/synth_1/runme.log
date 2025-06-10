@@ -7,23 +7,32 @@
   **** SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
   **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
   **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-  **** Start of session at: Tue Jun 10 02:03:42 2025
+  **** Start of session at: Tue Jun 10 15:59:27 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source master.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental /mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/final/final.srcs/utils_1/imports/synth_1/master.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/final/final.srcs/utils_1/imports/synth_1/master.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top master -part xc7a35tcpg236-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 20799
+INFO: [Synth 8-7075] Helper process launched with PID 21701
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1838.586 ; gain = 387.855 ; free physical = 218 ; free virtual = 5960
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1841.652 ; gain = 398.852 ; free physical = 178 ; free virtual = 6595
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'master' [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
+INFO: [Synth 8-11241] undeclared symbol 'reset_n', assumed default net type 'wire' [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:48]
+INFO: [Synth 8-11241] undeclared symbol 'rest_n', assumed default net type 'wire' [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:52]
+INFO: [Synth 8-6157] synthesizing module 'master' [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+INFO: [Synth 8-6157] synthesizing module 'encoder8to3' [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/encoder.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'encoder8to3' (0#1) [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/encoder.v:4]
 INFO: [Synth 8-6157] synthesizing module 'delay_module' [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/delay_module.v:5]
 INFO: [Synth 8-6157] synthesizing module 'edge_trigger_D_FF' [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/flip_flops.v:55]
 INFO: [Synth 8-6157] synthesizing module 'msJKFF' [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/flip_flops.v:18]
@@ -32,102 +41,102 @@ INFO: [Synth 8-6155] done synthesizing module 'srLatch' (0#1) [/mnt/T7_wooang/Ho
 INFO: [Synth 8-6155] done synthesizing module 'msJKFF' (0#1) [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/flip_flops.v:18]
 INFO: [Synth 8-6155] done synthesizing module 'edge_trigger_D_FF' (0#1) [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/flip_flops.v:55]
 INFO: [Synth 8-6155] done synthesizing module 'delay_module' (0#1) [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/delay_module.v:5]
-INFO: [Synth 8-6157] synthesizing module 'button_end' [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'button_end' (0#1) [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'master' (0#1) [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-WARNING: [Synth 8-3848] Net output_turn in module/entity master does not have driver. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:7]
-WARNING: [Synth 8-3848] Net led_select in module/entity master does not have driver. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:8]
-WARNING: [Synth 8-3848] Net led_output in module/entity master does not have driver. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:9]
-WARNING: [Synth 8-3848] Net ssSel in module/entity master does not have driver. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:11]
+WARNING: [Synth 8-689] width (3) of port connection 'input_wire' does not match port width (1) of module 'delay_module' [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:51]
+WARNING: [Synth 8-689] width (3) of port connection 'output_wire' does not match port width (1) of module 'delay_module' [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:51]
+INFO: [Synth 8-6157] synthesizing module 'state_transition' [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/state_transition.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'state_transition' (0#1) [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/state_transition.v:4]
+INFO: [Synth 8-6157] synthesizing module 'led_counter' [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/led_counter.v:4]
+INFO: [Synth 8-6157] synthesizing module 'edge_trigger_T_FF' [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/flip_flops.v:64]
+INFO: [Synth 8-6155] done synthesizing module 'edge_trigger_T_FF' (0#1) [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/flip_flops.v:64]
+INFO: [Synth 8-6155] done synthesizing module 'led_counter' (0#1) [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/led_counter.v:4]
+INFO: [Synth 8-6157] synthesizing module 'led_output' [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/led_output.v:66]
+INFO: [Synth 8-6157] synthesizing module 'led_additional' [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/led_output.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'led_additional' (0#1) [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/led_output.v:4]
+INFO: [Synth 8-6157] synthesizing module 'basicled' [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/led_output.v:38]
+INFO: [Synth 8-6155] done synthesizing module 'basicled' (0#1) [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/led_output.v:38]
+INFO: [Synth 8-6155] done synthesizing module 'led_output' (0#1) [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/led_output.v:66]
+INFO: [Synth 8-6157] synthesizing module 'decade_counter' [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'decade_counter' (0#1) [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:4]
+INFO: [Synth 8-6157] synthesizing module 'bcd_to_7seg' [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/s_seg.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'bcd_to_7seg' (0#1) [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/s_seg.v:4]
+WARNING: [Synth 8-689] width (8) of port connection 'seg7_out' does not match port width (7) of module 'bcd_to_7seg' [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'master' (0#1) [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+WARNING: [Synth 8-3848] Net output_state in module/entity state_transition does not have driver. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/state_transition.v:8]
+WARNING: [Synth 8-3848] Net rest_n in module/entity master does not have driver. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:52]
+WARNING: [Synth 8-3917] design master has port ssDisp[7] driven by constant 0
+WARNING: [Synth 8-7129] Port state[6] in module led_additional is either unconnected or has no load
+WARNING: [Synth 8-7129] Port state[5] in module led_additional is either unconnected or has no load
 WARNING: [Synth 8-7129] Port output_turn in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_select[2] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_select[1] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_select[0] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[16] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[15] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[14] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[13] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[12] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[11] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[10] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[9] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[8] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[7] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[6] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[5] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[4] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[3] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[2] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[1] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[0] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ssDisp[7] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ssDisp[6] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ssDisp[5] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ssDisp[4] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ssDisp[3] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ssDisp[2] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ssDisp[1] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ssSel[3] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ssSel[2] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ssSel[1] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ssSel[0] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port blue_reset_button in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port red_reset_button in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port down in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port left in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port right in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port decision in module master is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1909.523 ; gain = 458.793 ; free physical = 182 ; free virtual = 5874
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1920.621 ; gain = 477.820 ; free physical = 178 ; free virtual = 6530
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1927.336 ; gain = 476.605 ; free physical = 177 ; free virtual = 5870
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1938.434 ; gain = 495.633 ; free physical = 172 ; free virtual = 6532
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1927.336 ; gain = 476.605 ; free physical = 177 ; free virtual = 5870
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1938.434 ; gain = 495.633 ; free physical = 172 ; free virtual = 6532
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1927.336 ; gain = 0.000 ; free physical = 189 ; free virtual = 5872
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1938.434 ; gain = 0.000 ; free physical = 168 ; free virtual = 6535
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/constr.xdc]
+WARNING: [Vivado 12-584] No ports matched 'blue_reset_button'. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/constr.xdc:34]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/constr.xdc:34]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'red_reset_button'. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/constr.xdc:35]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/constr.xdc:35]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'blue_reset_button'. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/constr.xdc:87]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/constr.xdc:87]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'red_reset_button'. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/constr.xdc:88]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/constr.xdc:88]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/constr.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/constr.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/master_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/master_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2075.086 ; gain = 0.000 ; free physical = 219 ; free virtual = 5889
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2094.184 ; gain = 0.000 ; free physical = 200 ; free virtual = 6555
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2075.086 ; gain = 0.000 ; free physical = 219 ; free virtual = 5889
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2094.184 ; gain = 0.000 ; free physical = 200 ; free virtual = 6555
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2075.086 ; gain = 624.355 ; free physical = 243 ; free virtual = 5917
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2094.184 ; gain = 651.383 ; free physical = 256 ; free virtual = 6589
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2083.090 ; gain = 632.359 ; free physical = 243 ; free virtual = 5917
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2102.188 ; gain = 659.387 ; free physical = 256 ; free virtual = 6589
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2083.090 ; gain = 632.359 ; free physical = 244 ; free virtual = 5919
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2102.188 ; gain = 659.387 ; free physical = 254 ; free virtual = 6587
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2083.090 ; gain = 632.359 ; free physical = 237 ; free virtual = 5917
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2102.188 ; gain = 659.387 ; free physical = 230 ; free virtual = 6565
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   24 Bit       Adders := 1     
++---Registers : 
+	               24 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -144,746 +153,634 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3917] design master has port ssDisp[7] driven by constant 0
 WARNING: [Synth 8-7129] Port output_turn in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_select[2] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_select[1] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_select[0] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[16] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[15] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[14] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[13] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[12] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[11] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[10] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[9] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[8] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[7] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[6] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[5] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[4] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[3] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[2] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[1] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led_output[0] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ssDisp[7] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ssDisp[6] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ssDisp[5] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ssDisp[4] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ssDisp[3] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ssDisp[2] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ssDisp[1] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ssSel[3] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ssSel[2] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ssSel[1] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ssSel[0] in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port blue_reset_button in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port red_reset_button in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port down in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port left in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port right in module master is either unconnected or has no load
-WARNING: [Synth 8-7129] Port decision in module master is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2083.090 ; gain = 632.359 ; free physical = 226 ; free virtual = 5919
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2102.188 ; gain = 659.387 ; free physical = 237 ; free virtual = 6576
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2097.090 ; gain = 646.359 ; free physical = 199 ; free virtual = 5855
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2108.188 ; gain = 665.387 ; free physical = 191 ; free virtual = 6498
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_42/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_151/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_151/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_16/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_154/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_16/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_154/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_26/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_157/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_26/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_157/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_36/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_160/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_36/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_160/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_50/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_163/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_50/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_60/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_166/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_163/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_60/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_70/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_169/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_166/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_70/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_80/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_172/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_169/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_80/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_90/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_175/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_172/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_90/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_100/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_178/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_175/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_100/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_110/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_181/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_178/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_110/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_120/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_184/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_181/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_120/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_130/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_187/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_184/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_130/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_140/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_190/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_187/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_140/O'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_190/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_88/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_0/i_85/O'
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2097.090 ; gain = 646.359 ; free physical = 199 ; free virtual = 5855
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2109.188 ; gain = 666.387 ; free physical = 191 ; free virtual = 6498
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_31/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_31/O'
 Found timing loop:
-     0: i_88/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_88/I1 (LUT2)
-     2: i_0/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: i_0/I0 (LUT2)
-     4: i_88/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O i_88"
+     0: i_75/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_75/I1 (LUT2)
+     2: i_106/O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: i_106/I1 (LUT3)
+     4: i_104/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     5: i_104/I1 (LUT2)
+     6: i_121/O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+     7: i_121/I0 (LUT3)
+     8: i_75/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I1 -to O i_75"
 Found timing loop:
-     0: i_88/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_88/I0 (LUT2)
-     2: i_17/O (LUT4)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: i_17/I2 (LUT4)
-     4: i_128/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_128/I1 (LUT2)
-     6: i_57/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     7: i_57/I1 (LUT2)
-     8: i_88/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I0 -to O i_88"
-Found timing loop:
-     0: i_128/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_128/I1 (LUT2)
-     2: i_57/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: i_57/I1 (LUT2)
-     4: i_88/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_88/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O i_128"
-Found timing loop:
-     0: i_128/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_128/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_88/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_88/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_88/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_88/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_127/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_127/I1 (LUT2)
-     2: i_55/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: i_55/I1 (LUT2)
-     4: i_141/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_141/I1 (LUT2)
-     6: i_83/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     7: i_83/I1 (LUT2)
-     8: i_127/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O i_127"
-Found timing loop:
-     0: i_127/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_127/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_125/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_125/I1 (LUT2)
-     2: i_154/O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-     3: i_154/I2 (LUT3)
-     4: i_127/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_127/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O i_125"
-Found timing loop:
-     0: i_127/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_127/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_124/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_124/I1 (LUT2)
-     2: i_52/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: i_52/I1 (LUT2)
-     4: i_140/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_140/I1 (LUT2)
-     6: i_81/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     7: i_81/I1 (LUT2)
-     8: i_124/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O i_124"
-Found timing loop:
-     0: i_124/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_124/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_122/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_122/I1 (LUT2)
-     2: i_153/O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-     3: i_153/I2 (LUT3)
-     4: i_124/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_124/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O i_122"
-Found timing loop:
-     0: i_124/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_124/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_121/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_121/I1 (LUT2)
-     2: i_49/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: i_49/I1 (LUT2)
-     4: i_139/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_139/I1 (LUT2)
-     6: i_79/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     7: i_79/I1 (LUT2)
-     8: i_121/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O i_121"
-Found timing loop:
-     0: i_121/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_121/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_119/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_119/I1 (LUT2)
-     2: i_152/O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-     3: i_152/I2 (LUT3)
-     4: i_121/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_121/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O i_119"
-Found timing loop:
-     0: i_121/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_121/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_118/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_118/I1 (LUT2)
-     2: i_46/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: i_46/I1 (LUT2)
-     4: i_138/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_138/I1 (LUT2)
-     6: i_77/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     7: i_77/I1 (LUT2)
-     8: i_118/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O i_118"
-Found timing loop:
-     0: i_118/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_118/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_116/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_116/I1 (LUT2)
-     2: i_151/O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-     3: i_151/I2 (LUT3)
-     4: i_118/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_118/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O i_116"
-Found timing loop:
-     0: i_118/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_118/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_115/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_115/I1 (LUT2)
-     2: i_43/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: i_43/I1 (LUT2)
-     4: i_137/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_137/I1 (LUT2)
-     6: i_75/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     7: i_75/I1 (LUT2)
-     8: i_115/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O i_115"
-Found timing loop:
-     0: i_115/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_115/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_113/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_113/I1 (LUT2)
-     2: i_150/O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-     3: i_150/I2 (LUT3)
-     4: i_115/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_115/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O i_113"
-Found timing loop:
-     0: i_115/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_115/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_112/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_112/I1 (LUT2)
-     2: i_40/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: i_40/I1 (LUT2)
-     4: i_136/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_136/I1 (LUT2)
-     6: i_73/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     7: i_73/I1 (LUT2)
-     8: i_112/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O i_112"
-Found timing loop:
-     0: i_112/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_112/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_110/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_110/I1 (LUT2)
-     2: i_149/O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-     3: i_149/I2 (LUT3)
-     4: i_112/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_112/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O i_110"
-Found timing loop:
-     0: i_112/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_112/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_109/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_109/I1 (LUT2)
-     2: i_37/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: i_37/I1 (LUT2)
-     4: i_135/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_135/I1 (LUT2)
-     6: i_71/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     7: i_71/I1 (LUT2)
-     8: i_109/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O i_109"
-Found timing loop:
-     0: i_109/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_109/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_107/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_107/I1 (LUT2)
-     2: i_148/O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-     3: i_148/I2 (LUT3)
-     4: i_109/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_109/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O i_107"
-Found timing loop:
-     0: i_109/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_109/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_106/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_106/I1 (LUT2)
-     2: i_34/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: i_34/I1 (LUT2)
-     4: i_134/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_134/I1 (LUT2)
-     6: i_69/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     7: i_69/I1 (LUT2)
-     8: i_106/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O i_106"
-Found timing loop:
-     0: i_106/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_106/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
+     0: i_75/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_75/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
 Found timing loop:
      0: i_104/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_104/I1 (LUT2)
-     2: i_147/O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-     3: i_147/I2 (LUT3)
-     4: i_106/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_106/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O i_104"
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_104/I0 (LUT2)
+     2: i_116/O (LUT4)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+     3: i_116/I2 (LUT4)
+     4: i_75/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     5: i_75/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I0 -to O i_104"
 Found timing loop:
-     0: i_106/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_106/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
+     0: i_75/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_75/I0 (LUT2)
+     2: i_122/O (LUT4)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+     3: i_122/I3 (LUT4)
+     4: i_75/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I0 -to O i_75"
+Found timing loop:
+     0: i_80/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_80/I1 (LUT2)
+     2: i_79/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: i_79/I1 (LUT2)
+     4: i_142/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+     5: i_142/I1 (LUT2)
+     6: i_80/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I1 -to O i_80"
+Found timing loop:
+     0: i_80/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_80/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Found timing loop:
+     0: i_117/O (LUT4)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+     1: i_117/I3 (LUT4)
+     2: i_80/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: i_80/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I3 -to O i_117"
+Found timing loop:
+     0: i_80/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_80/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Found timing loop:
+     0: i_89/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_89/I1 (LUT2)
+     2: i_51/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: i_51/I0 (LUT2)
+     4: i_88/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     5: i_88/I1 (LUT2)
+     6: i_0/O (LUT4)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     7: i_0/I3 (LUT4)
+     8: i_89/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I1 -to O i_89"
+Found timing loop:
+     0: i_89/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_89/I0 (LUT2)
+     2: i_85/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: i_85/I1 (LUT2)
+     4: i_40/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     5: i_40/I1 (LUT2)
+     6: i_89/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I0 -to O i_89"
+Found timing loop:
+     0: i_84/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_84/I1 (LUT2)
+     2: i_115/O (LUT4)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: i_115/I2 (LUT4)
+     4: i_85/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     5: i_85/I0 (LUT2)
+     6: i_48/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     7: i_48/I1 (LUT2)
+     8: i_84/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I1 -to O i_84"
+Found timing loop:
+     0: i_86/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_86/I1 (LUT2)
+     2: i_113/O (LUT4)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: i_113/I2 (LUT4)
+     4: i_87/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     5: i_87/I1 (LUT2)
+     6: i_1/O (LUT6)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     7: i_1/I4 (LUT6)
+     8: i_78/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     9: i_78/I1 (LUT2)
+    10: i_50/O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+    11: i_50/I2 (LUT3)
+    12: i_86/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I1 -to O i_86"
+Found timing loop:
+     0: i_87/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_87/I1 (LUT2)
+     2: i_1/O (LUT6)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: i_1/I4 (LUT6)
+     4: i_78/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     5: i_78/I1 (LUT2)
+     6: i_50/O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     7: i_50/I2 (LUT3)
+     8: i_86/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     9: i_86/I0 (LUT2)
+    10: i_78/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I1 -to O i_87"
+Found timing loop:
+     0: i_86/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_86/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Found timing loop:
+     0: i_87/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_87/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Found timing loop:
+     0: i_86/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_86/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Found timing loop:
+     0: i_82/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_82/I1 (LUT2)
+     2: i_105/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: i_105/I1 (LUT2)
+     4: i_114/O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     5: i_114/I2 (LUT3)
+     6: i_82/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I1 -to O i_82"
+Found timing loop:
+     0: i_82/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_82/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Found timing loop:
+     0: i_83/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_83/I1 (LUT2)
+     2: i_124/O (LUT5)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+     3: i_124/I2 (LUT5)
+     4: i_82/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     5: i_82/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I1 -to O i_83"
+Found timing loop:
+     0: i_105/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_105/I1 (LUT2)
+     2: i_114/O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: i_114/I2 (LUT3)
+     4: i_82/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     5: i_82/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I1 -to O i_105"
+Found timing loop:
+     0: i_88/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_88/I0 (LUT2)
+     2: i_84/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: i_84/I0 (LUT2)
+     4: i_88/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I0 -to O i_88"
+Found timing loop:
+     0: i_76/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_76/I1 (LUT2)
+     2: i_108/O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: i_108/I2 (LUT3)
+     4: i_120/O (LUT5)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+     5: i_120/I1 (LUT5)
+     6: i_76/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I1 -to O i_76"
+Found timing loop:
+     0: i_120/O (LUT5)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+     1: i_120/I1 (LUT5)
+     2: i_76/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: i_76/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I1 -to O i_120"
+Found timing loop:
+     0: i_76/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_76/I0 (LUT2)
+     2: i_107/O (LUT4)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: i_107/I2 (LUT4)
+     4: i_76/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I0 -to O i_76"
+Found timing loop:
+     0: i_77/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_77/I1 (LUT2)
+     2: i_24/O (LUT6)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: i_24/I4 (LUT6)
+     4: i_77/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I1 -to O i_77"
+Found timing loop:
+     0: i_140/O (LUT4)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+     1: i_140/I2 (LUT4)
+     2: i_77/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: i_77/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I2 -to O i_140"
+Found timing loop:
+     0: i_77/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_77/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Found timing loop:
+     0: i_140/O (LUT4)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+     1: i_140/I0 (LUT4)
+     2: i_140/O (LUT4)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I0 -to O i_140"
+Found timing loop:
+     0: i_140/O (LUT4)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+     1: i_140/O (LUT4)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Found timing loop:
+     0: i_102/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_102/I1 (LUT2)
+     2: i_130/O (LUT1)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+     3: i_130/I0 (LUT1)
+     4: i_102/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I1 -to O i_102"
 Found timing loop:
      0: i_103/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
      1: i_103/I1 (LUT2)
-     2: i_31/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: i_31/I1 (LUT2)
-     4: i_133/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_133/I1 (LUT2)
-     6: i_67/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     7: i_67/I1 (LUT2)
+     2: i_139/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+     3: i_139/I0 (LUT2)
+     4: i_102/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     5: i_102/I0 (LUT2)
+     6: i_63/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     7: i_63/I1 (LUT2)
      8: i_103/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
 Inferred a: "set_disable_timing -from I1 -to O i_103"
 Found timing loop:
      0: i_103/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_103/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_101/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_101/I1 (LUT2)
-     2: i_146/O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-     3: i_146/I2 (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_103/I0 (LUT2)
+     2: i_64/O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: i_64/I0 (LUT3)
      4: i_103/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_103/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O i_101"
-Found timing loop:
-     0: i_103/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_103/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_100/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_100/I1 (LUT2)
-     2: i_28/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: i_28/I1 (LUT2)
-     4: i_132/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_132/I1 (LUT2)
-     6: i_65/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     7: i_65/I1 (LUT2)
-     8: i_100/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O i_100"
-Found timing loop:
-     0: i_100/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_100/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_98/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_98/I1 (LUT2)
-     2: i_145/O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-     3: i_145/I2 (LUT3)
-     4: i_100/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_100/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O i_98"
-Found timing loop:
-     0: i_100/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_100/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_94/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_94/I1 (LUT2)
-     2: i_22/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: i_22/I1 (LUT2)
-     4: i_130/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_130/I1 (LUT2)
-     6: i_61/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     7: i_61/I1 (LUT2)
-     8: i_94/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O i_94"
-Found timing loop:
-     0: i_94/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_94/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I0 -to O i_103"
 Found timing loop:
      0: i_92/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
      1: i_92/I1 (LUT2)
-     2: i_143/O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-     3: i_143/I2 (LUT3)
-     4: i_94/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_94/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
+     2: i_126/O (LUT1)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+     3: i_126/I0 (LUT1)
+     4: i_92/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
 Inferred a: "set_disable_timing -from I1 -to O i_92"
 Found timing loop:
-     0: i_94/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_94/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
+     0: i_93/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_93/I1 (LUT2)
+     2: i_135/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+     3: i_135/I0 (LUT2)
+     4: i_92/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     5: i_92/I0 (LUT2)
+     6: i_55/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     7: i_55/I1 (LUT2)
+     8: i_93/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I1 -to O i_93"
+Found timing loop:
+     0: i_93/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_93/I0 (LUT2)
+     2: i_56/O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: i_56/I0 (LUT3)
+     4: i_93/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I0 -to O i_93"
+Found timing loop:
+     0: i_90/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_90/I1 (LUT2)
+     2: i_125/O (LUT1)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+     3: i_125/I0 (LUT1)
+     4: i_90/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I1 -to O i_90"
 Found timing loop:
      0: i_91/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
      1: i_91/I1 (LUT2)
-     2: i_19/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: i_19/I1 (LUT2)
-     4: i_129/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_129/I1 (LUT2)
-     6: i_59/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     7: i_59/I1 (LUT2)
+     2: i_134/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+     3: i_134/I0 (LUT2)
+     4: i_90/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     5: i_90/I0 (LUT2)
+     6: i_53/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     7: i_53/I1 (LUT2)
      8: i_91/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
 Inferred a: "set_disable_timing -from I1 -to O i_91"
 Found timing loop:
      0: i_91/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_91/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_89/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_89/I1 (LUT2)
-     2: i_142/O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-     3: i_142/I2 (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_91/I0 (LUT2)
+     2: i_54/O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: i_54/I0 (LUT3)
      4: i_91/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_91/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O i_89"
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I0 -to O i_91"
 Found timing loop:
-     0: i_91/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_91/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
+     0: i_101/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_101/I1 (LUT2)
+     2: i_110/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: i_110/I1 (LUT2)
+     4: i_30/O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     5: i_30/I2 (LUT3)
+     6: i_101/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I1 -to O i_101"
 Found timing loop:
-     0: i_91/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_91/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
+     0: i_30/O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_30/I2 (LUT3)
+     2: i_101/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: i_101/I0 (LUT2)
+     4: i_101/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I2 -to O i_30"
 Found timing loop:
-     0: i_94/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_94/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
+     0: i_101/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_101/I0 (LUT2)
+     2: i_101/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I0 -to O i_101"
+Found timing loop:
+     0: i_96/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_96/I1 (LUT2)
+     2: i_128/O (LUT1)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+     3: i_128/I0 (LUT1)
+     4: i_96/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I1 -to O i_96"
 Found timing loop:
      0: i_97/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
      1: i_97/I1 (LUT2)
-     2: i_25/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: i_25/I1 (LUT2)
-     4: i_131/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_131/I1 (LUT2)
-     6: i_63/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     7: i_63/I1 (LUT2)
+     2: i_137/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+     3: i_137/I0 (LUT2)
+     4: i_96/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     5: i_96/I0 (LUT2)
+     6: i_59/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     7: i_59/I1 (LUT2)
      8: i_97/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
 Inferred a: "set_disable_timing -from I1 -to O i_97"
 Found timing loop:
      0: i_97/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_97/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_97/I0 (LUT2)
+     2: i_60/O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: i_60/I0 (LUT3)
+     4: i_97/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I0 -to O i_97"
+Found timing loop:
+     0: i_94/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_94/I1 (LUT2)
+     2: i_127/O (LUT1)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+     3: i_127/I0 (LUT1)
+     4: i_94/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I1 -to O i_94"
 Found timing loop:
      0: i_95/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
      1: i_95/I1 (LUT2)
-     2: i_144/O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-     3: i_144/I2 (LUT3)
-     4: i_97/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     5: i_97/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
+     2: i_136/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+     3: i_136/I0 (LUT2)
+     4: i_94/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     5: i_94/I0 (LUT2)
+     6: i_57/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     7: i_57/I1 (LUT2)
+     8: i_95/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
 Inferred a: "set_disable_timing -from I1 -to O i_95"
 Found timing loop:
-     0: i_97/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_97/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
+     0: i_95/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_95/I0 (LUT2)
+     2: i_58/O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: i_58/I0 (LUT3)
+     4: i_95/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I0 -to O i_95"
 Found timing loop:
-     0: i_97/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_97/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
+     0: i_36/O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_36/I2 (LUT3)
+     2: i_98/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: i_98/I1 (LUT2)
+     4: i_111/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     5: i_111/I1 (LUT2)
+     6: i_36/O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I2 -to O i_36"
+Found timing loop:
+     0: i_98/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_98/I0 (LUT2)
+     2: i_98/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I0 -to O i_98"
+Found timing loop:
+     0: i_36/O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_36/I0 (LUT3)
+     2: i_36/O (LUT3)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I0 -to O i_36"
+Found timing loop:
+     0: i_99/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_99/I1 (LUT2)
+     2: i_129/O (LUT1)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+     3: i_129/I0 (LUT1)
+     4: i_99/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I1 -to O i_99"
 Found timing loop:
      0: i_100/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_100/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_100/I1 (LUT2)
+     2: i_138/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+     3: i_138/I0 (LUT2)
+     4: i_99/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     5: i_99/I0 (LUT2)
+     6: i_61/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     7: i_61/I1 (LUT2)
+     8: i_100/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I1 -to O i_100"
 Found timing loop:
-     0: i_103/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_103/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_106/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_106/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_109/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_109/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_112/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_112/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_115/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_115/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_118/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_118/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_121/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_121/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_124/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_124/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Found timing loop:
-     0: i_127/O (LUT2)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: i_127/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
+     0: i_100/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: i_100/I0 (LUT2)
+     2: i_62/O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: i_62/I0 (LUT3)
+     4: i_100/O (LUT2)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I0 -to O i_100"
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2107.105 ; gain = 656.375 ; free physical = 192 ; free virtual = 5848
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2119.203 ; gain = 676.402 ; free physical = 188 ; free virtual = 6481
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -901,381 +798,354 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2267.918 ; gain = 817.188 ; free physical = 201 ; free virtual = 5749
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2280.016 ; gain = 837.215 ; free physical = 191 ; free virtual = 6350
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2267.918 ; gain = 817.188 ; free physical = 201 ; free virtual = 5749
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2280.016 ; gain = 837.215 ; free physical = 191 ; free virtual = 6350
 ---------------------------------------------------------------------------------
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_12 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_12 /I2 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_12 /O (LUT3)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I2 -to O \ssDisp_OBUF[0]_inst_i_12 "
+     0: \led_select_OBUF[1]_inst_i_2 /O (LUT4)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \led_select_OBUF[1]_inst_i_2 /I3 (LUT4)
+     2: \led_select_OBUF[1]_inst_i_2 /O (LUT4)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I3 -to O \led_select_OBUF[1]_inst_i_2 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_12 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_12 /I0 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_20 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: \ssDisp_OBUF[0]_inst_i_20 /I2 (LUT5)
-     4: \ssDisp_OBUF[0]_inst_i_12 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I0 -to O \ssDisp_OBUF[0]_inst_i_12 "
+     0: \led_select_OBUF[0]_inst_i_2 /O (LUT4)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \led_select_OBUF[0]_inst_i_2 /I3 (LUT4)
+     2: \led_select_OBUF[0]_inst_i_2 /O (LUT4)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I3 -to O \led_select_OBUF[0]_inst_i_2 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_20 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_20 /I2 (LUT5)
-     2: \ssDisp_OBUF[0]_inst_i_12 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: \ssDisp_OBUF[0]_inst_i_12 /O (LUT3)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I2 -to O \ssDisp_OBUF[0]_inst_i_20 "
+     0: \led_select_OBUF[0]_inst_i_3 /O (LUT4)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+     1: \led_select_OBUF[0]_inst_i_3 /I3 (LUT4)
+     2: \led_select_OBUF[0]_inst_i_3 /O (LUT4)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I3 -to O \led_select_OBUF[0]_inst_i_3 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_16 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_16 /I4 (LUT5)
-     2: \ssDisp_OBUF[0]_inst_i_16 /O (LUT5)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I4 -to O \ssDisp_OBUF[0]_inst_i_16 "
+     0: \led_select_OBUF[0]_inst_i_2 /O (LUT4)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \led_select_OBUF[0]_inst_i_2 /I2 (LUT4)
+     2: \led_select_OBUF[0]_inst_i_3 /O (LUT4)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+     3: \led_select_OBUF[0]_inst_i_3 /I0 (LUT4)
+     4: \led_select_OBUF[0]_inst_i_2 /O (LUT4)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I2 -to O \led_select_OBUF[0]_inst_i_2 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_16 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_16 /I3 (LUT5)
-     2: \ssDisp_OBUF[0]_inst_i_6 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: \ssDisp_OBUF[0]_inst_i_6 /I1 (LUT3)
-     4: \ssDisp_OBUF[0]_inst_i_16 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I3 -to O \ssDisp_OBUF[0]_inst_i_16 "
+     0: \led_select_OBUF[2]_inst_i_3 /O (LUT6)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \led_select_OBUF[2]_inst_i_3 /I1 (LUT6)
+     2: \led_select_OBUF[2]_inst_i_2 /O (LUT6)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: \led_select_OBUF[2]_inst_i_2 /I5 (LUT6)
+     4: \led_select_OBUF[2]_inst_i_3 /O (LUT6)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I1 -to O \led_select_OBUF[2]_inst_i_3 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_6 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_6 /I1 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_16 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: \ssDisp_OBUF[0]_inst_i_16 /O (LUT5)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O \ssDisp_OBUF[0]_inst_i_6 "
+     0: \ssSel_OBUF[3]_inst_i_1 /O (LUT5)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \ssSel_OBUF[3]_inst_i_1 /I3 (LUT5)
+     2: \ssSel_OBUF[3]_inst_i_3 /O (LUT6)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: \ssSel_OBUF[3]_inst_i_3 /I4 (LUT6)
+     4: \ssSel_OBUF[3]_inst_i_1 /O (LUT5)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I3 -to O \ssSel_OBUF[3]_inst_i_1 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_7 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_7 /I4 (LUT5)
-     2: \ssDisp_OBUF[0]_inst_i_7 /O (LUT5)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I4 -to O \ssDisp_OBUF[0]_inst_i_7 "
+     0: \ssSel_OBUF[1]_inst_i_1 /O (LUT4)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \ssSel_OBUF[1]_inst_i_1 /I3 (LUT4)
+     2: \ssSel_OBUF[1]_inst_i_1 /O (LUT4)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I3 -to O \ssSel_OBUF[1]_inst_i_1 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_2 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_2 /I1 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_7 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: \ssDisp_OBUF[0]_inst_i_7 /I3 (LUT5)
-     4: \ssDisp_OBUF[0]_inst_i_2 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O \ssDisp_OBUF[0]_inst_i_2 "
+     0: \ssSel_OBUF[1]_inst_i_1 /O (LUT4)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \ssSel_OBUF[1]_inst_i_1 /I2 (LUT4)
+     2: \ssSel_OBUF[1]_inst_i_2 /O (LUT6)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: \ssSel_OBUF[1]_inst_i_2 /I4 (LUT6)
+     4: \ssSel_OBUF[1]_inst_i_1 /O (LUT4)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I2 -to O \ssSel_OBUF[1]_inst_i_1 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_15 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_15 /I4 (LUT5)
-     2: \ssDisp_OBUF[0]_inst_i_15 /O (LUT5)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I4 -to O \ssDisp_OBUF[0]_inst_i_15 "
+     0: \ssSel_OBUF[1]_inst_i_2 /O (LUT6)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \ssSel_OBUF[1]_inst_i_2 /I4 (LUT6)
+     2: \ssSel_OBUF[1]_inst_i_1 /O (LUT4)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: \ssSel_OBUF[1]_inst_i_1 /O (LUT4)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I4 -to O \ssSel_OBUF[1]_inst_i_2 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_5 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_5 /I1 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_15 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: \ssDisp_OBUF[0]_inst_i_15 /I3 (LUT5)
-     4: \ssDisp_OBUF[0]_inst_i_5 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O \ssDisp_OBUF[0]_inst_i_5 "
+     0: \ssDisp_OBUF[6]_inst_i_2 /O (LUT4)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \ssDisp_OBUF[6]_inst_i_2 /I1 (LUT4)
+     2: \ssDisp_OBUF[6]_inst_i_2 /O (LUT4)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I1 -to O \ssDisp_OBUF[6]_inst_i_2 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_8 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_8 /I4 (LUT5)
-     2: \ssDisp_OBUF[0]_inst_i_8 /O (LUT5)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I4 -to O \ssDisp_OBUF[0]_inst_i_8 "
+     0: \ssSel_OBUF[2]_inst_i_3 /O (LUT6)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \ssSel_OBUF[2]_inst_i_3 /I4 (LUT6)
+     2: \ssSel_OBUF[2]_inst_i_3 /O (LUT6)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I4 -to O \ssSel_OBUF[2]_inst_i_3 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_3 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_3 /I1 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_8 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: \ssDisp_OBUF[0]_inst_i_8 /I3 (LUT5)
-     4: \ssDisp_OBUF[0]_inst_i_3 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O \ssDisp_OBUF[0]_inst_i_3 "
+     0: \ssSel_OBUF[2]_inst_i_2 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \ssSel_OBUF[2]_inst_i_2 /I2 (LUT3)
+     2: \ssSel_OBUF[2]_inst_i_1 /O (LUT4)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: \ssSel_OBUF[2]_inst_i_1 /I3 (LUT4)
+     4: \ssSel_OBUF[2]_inst_i_3 /O (LUT6)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     5: \ssSel_OBUF[2]_inst_i_3 /I1 (LUT6)
+     6: \ssSel_OBUF[2]_inst_i_2 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I2 -to O \ssSel_OBUF[2]_inst_i_2 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_22 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_22 /I4 (LUT5)
-     2: \ssDisp_OBUF[0]_inst_i_22 /O (LUT5)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I4 -to O \ssDisp_OBUF[0]_inst_i_22 "
+     0: \ssSel_OBUF[2]_inst_i_2 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \ssSel_OBUF[2]_inst_i_2 /O (LUT3)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_14 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_14 /I1 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_22 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: \ssDisp_OBUF[0]_inst_i_22 /I3 (LUT5)
-     4: \ssDisp_OBUF[0]_inst_i_14 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O \ssDisp_OBUF[0]_inst_i_14 "
+     0: \ssSel_OBUF[3]_inst_i_1 /O (LUT5)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \ssSel_OBUF[3]_inst_i_1 /I2 (LUT5)
+     2: \ssSel_OBUF[3]_inst_i_1 /O (LUT5)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I2 -to O \ssSel_OBUF[3]_inst_i_1 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_17 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_17 /I4 (LUT5)
-     2: \ssDisp_OBUF[0]_inst_i_17 /O (LUT5)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I4 -to O \ssDisp_OBUF[0]_inst_i_17 "
+     0: \ssSel_OBUF[3]_inst_i_1 /O (LUT5)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \ssSel_OBUF[3]_inst_i_1 /I0 (LUT5)
+     2: \ssSel_OBUF[3]_inst_i_2 /O (LUT6)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: \ssSel_OBUF[3]_inst_i_2 /I2 (LUT6)
+     4: \ssSel_OBUF[3]_inst_i_1 /O (LUT5)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I0 -to O \ssSel_OBUF[3]_inst_i_1 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_9 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_9 /I1 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_17 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: \ssDisp_OBUF[0]_inst_i_17 /I3 (LUT5)
-     4: \ssDisp_OBUF[0]_inst_i_9 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O \ssDisp_OBUF[0]_inst_i_9 "
+     0: \ssSel_OBUF[3]_inst_i_2 /O (LUT6)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \ssSel_OBUF[3]_inst_i_2 /I2 (LUT6)
+     2: \ssSel_OBUF[3]_inst_i_1 /O (LUT5)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: \ssSel_OBUF[3]_inst_i_1 /O (LUT5)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I2 -to O \ssSel_OBUF[3]_inst_i_2 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_21 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_21 /I4 (LUT5)
-     2: \ssDisp_OBUF[0]_inst_i_21 /O (LUT5)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I4 -to O \ssDisp_OBUF[0]_inst_i_21 "
+     0: \led_out_OBUF[15]_inst_i_7 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \led_out_OBUF[15]_inst_i_7 /I2 (LUT3)
+     2: \led_out_OBUF[15]_inst_i_7 /O (LUT3)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I2 -to O \led_out_OBUF[15]_inst_i_7 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_13 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_13 /I1 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_21 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: \ssDisp_OBUF[0]_inst_i_21 /I3 (LUT5)
-     4: \ssDisp_OBUF[0]_inst_i_13 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O \ssDisp_OBUF[0]_inst_i_13 "
+     0: \led_out_OBUF[11]_inst_i_4 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \led_out_OBUF[11]_inst_i_4 /I2 (LUT3)
+     2: \led_out_OBUF[11]_inst_i_4 /O (LUT3)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I2 -to O \led_out_OBUF[11]_inst_i_4 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_18 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_18 /I4 (LUT5)
-     2: \ssDisp_OBUF[0]_inst_i_18 /O (LUT5)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I4 -to O \ssDisp_OBUF[0]_inst_i_18 "
+     0: \led_out_OBUF[16]_inst_i_3 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \led_out_OBUF[16]_inst_i_3 /I2 (LUT3)
+     2: \led_out_OBUF[16]_inst_i_3 /O (LUT3)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I2 -to O \led_out_OBUF[16]_inst_i_3 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_10 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_10 /I1 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_18 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: \ssDisp_OBUF[0]_inst_i_18 /I3 (LUT5)
-     4: \ssDisp_OBUF[0]_inst_i_10 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O \ssDisp_OBUF[0]_inst_i_10 "
+     0: \led_out_OBUF[16]_inst_i_3 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \led_out_OBUF[16]_inst_i_3 /I0 (LUT3)
+     2: \led_out_OBUF[16]_inst_i_6 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: \led_out_OBUF[16]_inst_i_6 /I2 (LUT3)
+     4: \led_out_OBUF[16]_inst_i_3 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I0 -to O \led_out_OBUF[16]_inst_i_3 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_19 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_19 /I4 (LUT5)
-     2: \ssDisp_OBUF[0]_inst_i_19 /O (LUT5)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I4 -to O \ssDisp_OBUF[0]_inst_i_19 "
+     0: \led_out_OBUF[16]_inst_i_6 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \led_out_OBUF[16]_inst_i_6 /I2 (LUT3)
+     2: \led_out_OBUF[16]_inst_i_3 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: \led_out_OBUF[16]_inst_i_3 /O (LUT3)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I2 -to O \led_out_OBUF[16]_inst_i_6 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_11 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_11 /I1 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_19 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: \ssDisp_OBUF[0]_inst_i_19 /I3 (LUT5)
-     4: \ssDisp_OBUF[0]_inst_i_11 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I1 -to O \ssDisp_OBUF[0]_inst_i_11 "
+     0: \led_out_OBUF[16]_inst_i_5 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \led_out_OBUF[16]_inst_i_5 /I2 (LUT3)
+     2: \led_out_OBUF[16]_inst_i_5 /O (LUT3)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I2 -to O \led_out_OBUF[16]_inst_i_5 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_11 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_11 /I0 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_11 /O (LUT3)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I0 -to O \ssDisp_OBUF[0]_inst_i_11 "
+     0: \led_out_OBUF[16]_inst_i_5 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \led_out_OBUF[16]_inst_i_5 /I0 (LUT3)
+     2: \led_out_OBUF[16]_inst_i_8 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: \led_out_OBUF[16]_inst_i_8 /I2 (LUT3)
+     4: \led_out_OBUF[16]_inst_i_5 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I0 -to O \led_out_OBUF[16]_inst_i_5 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_10 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_10 /I0 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_10 /O (LUT3)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I0 -to O \ssDisp_OBUF[0]_inst_i_10 "
+     0: \led_out_OBUF[16]_inst_i_8 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \led_out_OBUF[16]_inst_i_8 /I2 (LUT3)
+     2: \led_out_OBUF[16]_inst_i_5 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: \led_out_OBUF[16]_inst_i_5 /O (LUT3)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I2 -to O \led_out_OBUF[16]_inst_i_8 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_13 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_13 /I0 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_13 /O (LUT3)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I0 -to O \ssDisp_OBUF[0]_inst_i_13 "
+     0: \led_out_OBUF[16]_inst_i_4 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \led_out_OBUF[16]_inst_i_4 /I2 (LUT3)
+     2: \led_out_OBUF[16]_inst_i_4 /O (LUT3)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I2 -to O \led_out_OBUF[16]_inst_i_4 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_9 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_9 /I0 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_9 /O (LUT3)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I0 -to O \ssDisp_OBUF[0]_inst_i_9 "
+     0: \led_out_OBUF[16]_inst_i_4 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \led_out_OBUF[16]_inst_i_4 /I0 (LUT3)
+     2: \led_out_OBUF[16]_inst_i_7 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: \led_out_OBUF[16]_inst_i_7 /I2 (LUT3)
+     4: \led_out_OBUF[16]_inst_i_4 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I0 -to O \led_out_OBUF[16]_inst_i_4 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_14 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_14 /I0 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_14 /O (LUT3)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I0 -to O \ssDisp_OBUF[0]_inst_i_14 "
+     0: \led_out_OBUF[16]_inst_i_7 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \led_out_OBUF[16]_inst_i_7 /I2 (LUT3)
+     2: \led_out_OBUF[16]_inst_i_4 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: \led_out_OBUF[16]_inst_i_4 /O (LUT3)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I2 -to O \led_out_OBUF[16]_inst_i_7 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_3 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_3 /I0 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_3 /O (LUT3)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-Inferred a: "set_disable_timing -from I0 -to O \ssDisp_OBUF[0]_inst_i_3 "
+     0: \led_out_OBUF[2]_inst_i_2 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \led_out_OBUF[2]_inst_i_2 /I2 (LUT3)
+     2: \led_out_OBUF[2]_inst_i_2 /O (LUT3)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I2 -to O \led_out_OBUF[2]_inst_i_2 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_5 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_5 /I0 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_5 /O (LUT3)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:4]
-INFO: [Common 17-14] Message 'Synth 8-295' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-Inferred a: "set_disable_timing -from I0 -to O \ssDisp_OBUF[0]_inst_i_5 "
+     0: \led_out_OBUF[2]_inst_i_2 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \led_out_OBUF[2]_inst_i_2 /I0 (LUT3)
+     2: \led_out_OBUF[2]_inst_i_4 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: \led_out_OBUF[2]_inst_i_4 /I2 (LUT3)
+     4: \led_out_OBUF[2]_inst_i_2 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I0 -to O \led_out_OBUF[2]_inst_i_2 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_2 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_2 /I0 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_2 /O (LUT3)
-Inferred a: "set_disable_timing -from I0 -to O \ssDisp_OBUF[0]_inst_i_2 "
+     0: \led_out_OBUF[2]_inst_i_4 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \led_out_OBUF[2]_inst_i_4 /I2 (LUT3)
+     2: \led_out_OBUF[2]_inst_i_2 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: \led_out_OBUF[2]_inst_i_2 /O (LUT3)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I2 -to O \led_out_OBUF[2]_inst_i_4 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_33 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_33 /I4 (LUT5)
-     2: \ssDisp_OBUF[0]_inst_i_33 /O (LUT5)
-Inferred a: "set_disable_timing -from I4 -to O \ssDisp_OBUF[0]_inst_i_33 "
+     0: \led_out_OBUF[15]_inst_i_6 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \led_out_OBUF[15]_inst_i_6 /I2 (LUT3)
+     2: \led_out_OBUF[15]_inst_i_6 /O (LUT3)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I2 -to O \led_out_OBUF[15]_inst_i_6 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_33 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_33 /I3 (LUT5)
-     2: \ssDisp_OBUF[0]_inst_i_28 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: \ssDisp_OBUF[0]_inst_i_28 /I1 (LUT3)
-     4: \ssDisp_OBUF[0]_inst_i_33 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-Inferred a: "set_disable_timing -from I3 -to O \ssDisp_OBUF[0]_inst_i_33 "
+     0: \led_out_OBUF[15]_inst_i_6 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \led_out_OBUF[15]_inst_i_6 /I0 (LUT3)
+     2: \led_out_OBUF[15]_inst_i_9 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: \led_out_OBUF[15]_inst_i_9 /I2 (LUT3)
+     4: \led_out_OBUF[15]_inst_i_6 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I0 -to O \led_out_OBUF[15]_inst_i_6 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_28 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_28 /I1 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_33 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: \ssDisp_OBUF[0]_inst_i_33 /O (LUT5)
-Inferred a: "set_disable_timing -from I1 -to O \ssDisp_OBUF[0]_inst_i_28 "
+     0: \led_out_OBUF[15]_inst_i_9 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \led_out_OBUF[15]_inst_i_9 /I2 (LUT3)
+     2: \led_out_OBUF[15]_inst_i_6 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: \led_out_OBUF[15]_inst_i_6 /O (LUT3)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I2 -to O \led_out_OBUF[15]_inst_i_9 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_30 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_30 /I4 (LUT5)
-     2: \ssDisp_OBUF[0]_inst_i_30 /O (LUT5)
-Inferred a: "set_disable_timing -from I4 -to O \ssDisp_OBUF[0]_inst_i_30 "
+     0: \led_out_OBUF[12]_inst_i_2 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \led_out_OBUF[12]_inst_i_2 /I2 (LUT3)
+     2: \led_out_OBUF[12]_inst_i_2 /O (LUT3)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I2 -to O \led_out_OBUF[12]_inst_i_2 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_25 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_25 /I1 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_30 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: \ssDisp_OBUF[0]_inst_i_30 /I3 (LUT5)
-     4: \ssDisp_OBUF[0]_inst_i_25 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-Inferred a: "set_disable_timing -from I1 -to O \ssDisp_OBUF[0]_inst_i_25 "
+     0: \led_out_OBUF[12]_inst_i_2 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \led_out_OBUF[12]_inst_i_2 /I0 (LUT3)
+     2: \led_out_OBUF[12]_inst_i_3 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: \led_out_OBUF[12]_inst_i_3 /I2 (LUT3)
+     4: \led_out_OBUF[12]_inst_i_2 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I0 -to O \led_out_OBUF[12]_inst_i_2 "
 Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_32 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_32 /I4 (LUT5)
-     2: \ssDisp_OBUF[0]_inst_i_32 /O (LUT5)
-Inferred a: "set_disable_timing -from I4 -to O \ssDisp_OBUF[0]_inst_i_32 "
-Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_27 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_27 /I1 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_32 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: \ssDisp_OBUF[0]_inst_i_32 /I3 (LUT5)
-     4: \ssDisp_OBUF[0]_inst_i_27 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-Inferred a: "set_disable_timing -from I1 -to O \ssDisp_OBUF[0]_inst_i_27 "
-Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_31 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_31 /I1 (LUT5)
-     2: \ssDisp_OBUF[0]_inst_i_31 /O (LUT5)
-Inferred a: "set_disable_timing -from I1 -to O \ssDisp_OBUF[0]_inst_i_31 "
-Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_26 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_26 /I1 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_31 /O (LUT5)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     3: \ssDisp_OBUF[0]_inst_i_31 /I0 (LUT5)
-     4: \ssDisp_OBUF[0]_inst_i_26 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-Inferred a: "set_disable_timing -from I1 -to O \ssDisp_OBUF[0]_inst_i_26 "
-Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_26 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_26 /I0 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_26 /O (LUT3)
-Inferred a: "set_disable_timing -from I0 -to O \ssDisp_OBUF[0]_inst_i_26 "
-Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_27 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_27 /I0 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_27 /O (LUT3)
-Inferred a: "set_disable_timing -from I0 -to O \ssDisp_OBUF[0]_inst_i_27 "
-Found timing loop:
-     0: \ssDisp_OBUF[0]_inst_i_25 /O (LUT3)
-      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v:13]
-     1: \ssDisp_OBUF[0]_inst_i_25 /I0 (LUT3)
-     2: \ssDisp_OBUF[0]_inst_i_25 /O (LUT3)
-Inferred a: "set_disable_timing -from I0 -to O \ssDisp_OBUF[0]_inst_i_25 "
+     0: \led_out_OBUF[12]_inst_i_3 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     1: \led_out_OBUF[12]_inst_i_3 /I2 (LUT3)
+     2: \led_out_OBUF[12]_inst_i_2 /O (LUT3)
+      [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v:8]
+     3: \led_out_OBUF[12]_inst_i_2 /O (LUT3)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v:3]
+Inferred a: "set_disable_timing -from I2 -to O \led_out_OBUF[12]_inst_i_3 "
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2267.918 ; gain = 817.188 ; free physical = 200 ; free virtual = 5749
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2280.016 ; gain = 837.215 ; free physical = 190 ; free virtual = 6349
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2267.918 ; gain = 817.188 ; free physical = 200 ; free virtual = 5749
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2280.016 ; gain = 837.215 ; free physical = 190 ; free virtual = 6349
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2267.918 ; gain = 817.188 ; free physical = 200 ; free virtual = 5749
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2280.016 ; gain = 837.215 ; free physical = 190 ; free virtual = 6349
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2267.918 ; gain = 817.188 ; free physical = 200 ; free virtual = 5749
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2280.016 ; gain = 837.215 ; free physical = 190 ; free virtual = 6349
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1288,40 +1158,41 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+------+------+
-|      |Cell  |Count |
-+------+------+------+
-|1     |LUT2  |     1|
-|2     |LUT3  |    14|
-|3     |LUT5  |    15|
-|4     |LUT6  |     3|
-|5     |IBUF  |     3|
-|6     |OBUF  |     1|
-|7     |OBUFT |    32|
-+------+------+------+
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT1 |     4|
+|2     |LUT2 |     8|
+|3     |LUT3 |    21|
+|4     |LUT4 |    23|
+|5     |LUT5 |     5|
+|6     |LUT6 |    28|
+|7     |IBUF |     2|
+|8     |OBUF |    32|
++------+-----+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2267.918 ; gain = 817.188 ; free physical = 200 ; free virtual = 5749
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2280.016 ; gain = 837.215 ; free physical = 190 ; free virtual = 6349
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 113 critical warnings and 94 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2267.918 ; gain = 669.438 ; free physical = 199 ; free virtual = 5748
-Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2267.926 ; gain = 817.188 ; free physical = 199 ; free virtual = 5748
+Synthesis finished with 0 errors, 89 critical warnings and 7 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2280.016 ; gain = 681.465 ; free physical = 190 ; free virtual = 6349
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2280.023 ; gain = 837.215 ; free physical = 190 ; free virtual = 6349
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2267.926 ; gain = 0.000 ; free physical = 191 ; free virtual = 5745
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2280.023 ; gain = 0.000 ; free physical = 185 ; free virtual = 6349
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2267.926 ; gain = 0.000 ; free physical = 353 ; free virtual = 5905
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2336.043 ; gain = 0.000 ; free physical = 331 ; free virtual = 6505
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: fcbcdb17
+Synth Design complete | Checksum: 5f9dfbeb
 INFO: [Common 17-83] Releasing license: Synthesis
-26 Infos, 136 Warnings, 100 Critical Warnings and 0 Errors encountered.
+49 Infos, 20 Warnings, 93 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:26 . Memory (MB): peak = 2267.926 ; gain = 817.203 ; free physical = 351 ; free virtual = 5904
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1671.269; main = 1477.484; forked = 269.466
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3169.359; main = 2267.922; forked = 946.250
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:29 . Memory (MB): peak = 2336.043 ; gain = 893.254 ; free physical = 330 ; free virtual = 6505
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1552.243; main = 1486.166; forked = 269.650
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3055.438; main = 2336.047; forked = 946.246
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2291.930 ; gain = 0.000 ; free physical = 351 ; free virtual = 5903
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2360.055 ; gain = 0.000 ; free physical = 330 ; free virtual = 6504
 INFO: [Common 17-1381] The checkpoint '/mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/final/final.runs/synth_1/master.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file master_utilization_synth.rpt -pb master_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Jun 10 02:04:11 2025...
+INFO: [Common 17-206] Exiting Vivado at Tue Jun 10 15:59:59 2025...

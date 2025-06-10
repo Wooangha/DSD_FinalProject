@@ -56,6 +56,8 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 2
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -71,9 +73,14 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  /mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/button_end.v
+  /mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/bcd_counter.v
   /mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/delay_module.v
+  /mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/encoder.v
   /mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/flip_flops.v
+  /mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/led_counter.v
+  /mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/led_output.v
+  /mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/s_seg.v
+  /mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/state_transition.v
   /mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/master.v
 }
 OPTRACE "Adding files" END { }
@@ -89,6 +96,8 @@ read_xdc /mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/constr.xdc
 set_property used_in_implementation false [get_files /mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/code/constr.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental /mnt/T7_wooang/Homeworks/CSED273_D.S.D/DSD_FinalProject/final/final.srcs/utils_1/imports/synth_1/master.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
