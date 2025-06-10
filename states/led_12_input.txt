@@ -1,1 +1,1 @@
-(~C & ~F & ~K & M) | (~A & ~H & ~I & ~K & L)
+(~A & B & ~C & E & ~F & G & ~H & I & ~K & L & M) | (~A & B & ~C & E & ~F & G & H & ~I & ~K & L & M) | (~A & B & ~C & E & F & ~H & ~I & J & ~K & L & M) | (~A & B & ~C & D & ~F & G & ~H & I & ~K & L & M) | (~A & B & ~C & D & ~F & G & H & ~I & ~K & L & M) | (~A & B & ~C & D & F & ~H & ~I & J & ~K & L & M) | (~A & B & E & ~F & G & ~H & ~I & J & ~K & L & M) | (~A & B & D & ~F & G & ~H & ~I & J & ~K & L & M) | (A & B & ~C & ~D & ~E & ~F & G & ~H & ~I & ~J & ~K & L & M)

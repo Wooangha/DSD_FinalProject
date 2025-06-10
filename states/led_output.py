@@ -14,7 +14,8 @@ def get_led_minterm(led_output: pd.DataFrame, num: int) -> tuple[set[int], set[i
             - The second set contains the don't care terms.
     """
     minterms = set()
-    dont_cares = {i for i in range(1 << 13)}
+    # dont_cares = {i for i in range(1 << 13)}
+    dont_cares = set()
     maxterms = set()
 
     str2int = lambda s: int(s, 2) if isinstance(s, str) else s
@@ -28,7 +29,7 @@ def get_led_minterm(led_output: pd.DataFrame, num: int) -> tuple[set[int], set[i
         elif led == "0":
             maxterms.add(str2int(state))
 
-    dont_cares = dont_cares - minterms - maxterms
+    # dont_cares = dont_cares - minterms - maxterms
     return minterms, dont_cares
 
 """
