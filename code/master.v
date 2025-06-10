@@ -7,23 +7,23 @@ module master(
     input left,
     input right,
     input decision,
-    input output_turn,
     input reset_button,
-    input reset_blue,
-    input reset_red,
+    input blue_reset_button,
+    input red_reset_button,
     output [2:0] led_select,
     output [16:0] led_out,
     output [7:0] ssDisp,
-    output [3:0] ssSel
+    output [3:0] ssSel,
+    output output_turn
 );
 
-//    reg clk_led;
-//    reg clk_state;
+    // reg clk_led;
+    // reg clk_state;
 
     // LED counter clk
-//    always #20 clk_led = ~clk_led;
+    // always #20 clk_led = ~clk_led;
     // 0.5 seconds for state transition
-//    always #500 clk_state = ~clk_state;
+    // always #500 clk_state = ~clk_state;
 
     reg clk_4Hz;
     reg [23:0] count = 0;
@@ -43,19 +43,27 @@ module master(
     wire [2:0] led_s;
     wire [3:0] ss_sel_tmp;
 
+    wire [6:0] bttns;
 
-    assign but={reset_blue, reset_red, decision, up, down, left, right};
     assign reset_n = ~reset_button;
+    delay_module dm6(reset_n, blue_reset_button, clk_4Hz, bttns[6]);
+    delay_module dm7(reset_n, red_reset_button, clk_4Hz, bttns[5]);
+    delay_module dm8(reset_n, decision, clk_4Hz, bttns[4]);
+    delay_module dm9(reset_n, up, clk_4Hz, bttns[3]);
+    delay_module dm10(reset_n, down, clk_4Hz, bttns[2]);
+    delay_module dm11(reset_n, left, clk_4Hz, bttns[1]);
+    delay_module dm12(reset_n, right, clk_4Hz, bttns[0]);
 
-    encoder8to3 en(but, dir);
-    delay_module dm(reset_n, dir, clk_4Hz, dir_out);
-    state_transition st1(rest_n, dir_out, clk, state);
+    encoder8to3 en(bttns, dir);
+    // delay_module dm(reset_n, dir, clk_4Hz, dir_out);
+    state_transition st1(reset_n, dir, clk, state);
     led_counter led_c(reset_n, clk, led_s);
     led_output led_op(state, led_s, led_out);
     decade_counter dc1(reset_n, clk, ss_sel_tmp);
-    bcd_to_7seg b71(ss_sel_tmp, ssDisp);
+    bcd_to_7seg b71(ss_sel_tmp, ssDisp[6:0]);
     assign led_select = led_s;
     assign ssSel = ss_sel_tmp;
+    assign output_turn = ~state[9];
 
 
 endmodule
