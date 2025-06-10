@@ -4,11 +4,12 @@
 module state_transition (
     input reset_n,
     input [2:0] input_wire,
+    input [9:0] input_state,
     input clk,
     output [9:0] output_state
 );
     wire A, B, C, D, E, F, G, H, I, J, K, L, M;
-    assign {A, B, C, D, E, F, G, H, I, J} = output_state;
+    assign {A, B, C, D, E, F, G, H, I, J} = input_state;
     assign {K, L, M} = input_wire;
 
     wire D0, D1, D2, D3, D4, D5, D6, D7, D8, D9;
@@ -27,70 +28,70 @@ module state_transition (
         .reset_n(1'b1),
         .d(D0),
         .clk(clk),
-        .q(J),
+        .q(output_state[0]),
         .q_()
     );
     edge_trigger_D_FF d1(
         .reset_n(1'b1),
         .d(D1),
         .clk(clk),
-        .q(I),
+        .q(output_state[1]),
         .q_()
     );
     edge_trigger_D_FF d2(
         .reset_n(1'b1),
         .d(D2),
         .clk(clk),
-        .q(H),
+        .q(output_state[2]),
         .q_()
     );
     edge_trigger_D_FF d3(
         .reset_n(1'b1),
         .d(D3),
         .clk(clk),
-        .q(G),
+        .q(output_state[3]),
         .q_()
     );
     edge_trigger_D_FF d4(   
         .reset_n(1'b1),
         .d(D4),
         .clk(clk),
-        .q(F),
+        .q(output_state[4]),
         .q_()
     );
     edge_trigger_D_FF d5(
         .reset_n(1'b1),
         .d(D5),
         .clk(clk),
-        .q(E),
+        .q(output_state[5]),
         .q_()
     );
     edge_trigger_D_FF d6(
         .reset_n(1'b1),
         .d(D6),
         .clk(clk),
-        .q(D),
+        .q(output_state[6]),
         .q_()
     );
     edge_trigger_D_FF d7(
         .reset_n(1'b1),
         .d(D7),
         .clk(clk),
-        .q(C),
+        .q(output_state[7]),
         .q_()
     );
     edge_trigger_D_FF d8(
         .reset_n(1'b1),
         .d(D8),
         .clk(clk),
-        .q(B),
+        .q(output_state[8]),
         .q_()
     );
     edge_trigger_D_FF d9(
         .reset_n(1'b1),
         .d(D9),
         .clk(clk),
-        .q(A),
+        .q(output_state[9]),
         .q_()
     );
 

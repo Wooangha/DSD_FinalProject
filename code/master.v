@@ -38,8 +38,9 @@ module master(
 
     reg clk_50Hz;
     reg [23:0] count2 = 0;
+
     always @(posedge clk) begin
-        if (count2 == 2_000_000 - 1) begin
+        if (count2 == 100_000 - 1) begin
             count2 <= 0;
             clk_50Hz <= ~clk_50Hz;
         end else begin
@@ -67,12 +68,11 @@ module master(
 
     encoder8to3 en(bttns, dir);
     // delay_module dm(reset_n, dir, clk_4Hz, dir_out);
-    state_transition st1(reset_n, dir, clk, state);
+    state_transition st1(reset_n, dir, state, clk, state);
     led_counter led_c(reset_n, clk_50Hz, led_s);
     led_output led_op(state, led_s, led_out);
     decade_counter dc1(reset_n, clk_4Hz, ss_sel_tmp);
-    // bcd_to_7seg b71(ss_sel_tmp, ssDisp[6:0]);
-    assign ssDisp[7:0] = 7'b10000000;   
+    bcd_to_7seg b71(ss_sel_tmp, ssDisp[6:0]);
     assign led_select = led_s;
     assign ssSel = 4'b0001;
     assign output_turn = ~state[9];
