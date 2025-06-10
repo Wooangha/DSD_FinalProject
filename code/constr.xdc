@@ -1,34 +1,34 @@
 
-set_property PACKAGE_PIN JC1 [get_ports {led_select[0]}]
-set_property PACKAGE_PIN JC2 [get_ports {led_select[1]}]
-set_property PACKAGE_PIN JC3 [get_ports {led_select[2]}]
+set_property PACKAGE_PIN K17 [get_ports {led_select[0]}]; # JC1
+set_property PACKAGE_PIN M18 [get_ports {led_select[1]}]; # JC2
+set_property PACKAGE_PIN N17 [get_ports {led_select[2]}]; # JC3
 
-set_property PACKAGE_PIN JC4 [get_ports {led_out[16]}]
-set_property PACKAGE_PIN JC7 [get_ports {led_out[15]}]
-set_property PACKAGE_PIN JC8 [get_ports {led_out[14]}]
-set_property PACKAGE_PIN JC9 [get_ports {led_out[13]}]
-set_property PACKAGE_PIN JC10 [get_ports {led_out[12]}]
+set_property PACKAGE_PIN P18 [get_ports {led_out[16]}]; # JC4
+set_property PACKAGE_PIN L17 [get_ports {led_out[15]}]; # JC7
+set_property PACKAGE_PIN M19 [get_ports {led_out[14]}]; # JC8
+set_property PACKAGE_PIN P17 [get_ports {led_out[13]}]; # JC9
+set_property PACKAGE_PIN R18 [get_ports {led_out[12]}]; # JC10
 
-set_property PACKAGE_PIN JB1 [get_ports {led_out[11]}]
-set_property PACKAGE_PIN JB2 [get_ports {led_out[10]}]
-set_property PACKAGE_PIN JB3 [get_ports {led_out[9]}]
-set_property PACKAGE_PIN JB4 [get_ports {led_out[8]}]
-set_property PACKAGE_PIN JB7 [get_ports {led_out[7]}]
-set_property PACKAGE_PIN JB8 [get_ports {led_out[6]}]
-set_property PACKAGE_PIN JB9 [get_ports {led_out[5]}]
-set_property PACKAGE_PIN JB10 [get_ports {led_out[4]}]
+set_property PACKAGE_PIN A14 [get_ports {led_out[11]}]; # JB1
+set_property PACKAGE_PIN A16 [get_ports {led_out[10]}]; # JB2
+set_property PACKAGE_PIN B15 [get_ports {led_out[9]}]; # JB3
+set_property PACKAGE_PIN B16 [get_ports {led_out[8]}]; # JB4
+set_property PACKAGE_PIN A15 [get_ports {led_out[7]}]; # JB7
+set_property PACKAGE_PIN A17 [get_ports {led_out[6]}]; # JB8
+set_property PACKAGE_PIN C15 [get_ports {led_out[5]}]; # JB9 
+set_property PACKAGE_PIN C16 [get_ports {led_out[4]}]; # JB10
 
-set_property PACKAGE_PIN JA7 [get_ports {led_out[3]}]
-set_property PACKAGE_PIN JA8 [get_ports {led_out[2]}]
-set_property PACKAGE_PIN JA9 [get_ports {led_out[1]}]
-set_property PACKAGE_PIN JA10 [get_ports {led_out[0]}]
+set_property PACKAGE_PIN H1 [get_ports {led_out[3]}]; # JA7
+set_property PACKAGE_PIN K2 [get_ports {led_out[2]}]; # JA8
+set_property PACKAGE_PIN H2 [get_ports {led_out[1]}]; # JA9
+set_property PACKAGE_PIN G3 [get_ports {led_out[0]}]; # JA10
 
-set_property PACKAGE_PIN XADC1_P [get_ports up]
-set_property PACKAGE_PIN XADC2_P [get_ports down]
-set_property PACKAGE_PIN XADC3_P [get_ports left]
-set_property PACKAGE_PIN XADC4_P [get_ports right]
-set_property PACKAGE_PIN XADC1_N [get_ports decision]
-set_property PACKAGE_PIN XADC2_N [get_ports output_turn]
+set_property PACKAGE_PIN J3 [get_ports up]; # XADC1_P
+set_property PACKAGE_PIN L3 [get_ports down]; # XADC2_P
+set_property PACKAGE_PIN M2 [get_ports left]; # XADC3_P
+set_property PACKAGE_PIN N2 [get_ports right]; # XADC4_P
+set_property PACKAGE_PIN K3 [get_ports decision]; # XADC1_N
+set_property PACKAGE_PIN M3 [get_ports output_turn]; # XADC2_N
 
 set_property PACKAGE_PIN U18 [get_ports reset_button]
 set_property PACKAGE_PIN W19 [get_ports blue_reset_button]
