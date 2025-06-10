@@ -16,10 +16,10 @@ module decade_counter(input reset_n, input clk, output [3:0] count);
 
     wire [3:0] q_;
 
-    msJKFF ff0(reset_n, j[0], k[0], clk, q[0], q_[0]);
-    msJKFF ff1(reset_n, j[1], k[1], clk, q[1], q_[1]);
-    msJKFF ff2(reset_n, j[2], k[2], clk, q[2], q_[2]);
-    msJKFF ff3(reset_n, j[3], k[3], clk, q[3], q_[3]);
+    edge_trigger_JKFF ff0(reset_n, j[0], k[0], clk, q[0], q_[0]);
+    edge_trigger_JKFF ff1(reset_n, j[1], k[1], clk, q[1], q_[1]);
+    edge_trigger_JKFF ff2(reset_n, j[2], k[2], clk, q[2], q_[2]);
+    edge_trigger_JKFF ff3(reset_n, j[3], k[3], clk, q[3], q_[3]);
     assign count = q;
 
 endmodule
