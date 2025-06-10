@@ -83,9 +83,9 @@ set_property IOSTANDARD LVCMOS33 [get_ports right]
 set_property IOSTANDARD LVCMOS33 [get_ports decision]
 set_property IOSTANDARD LVCMOS33 [get_ports output_turn]
 
-set_property IOSTANDARD LVCMOS18 [get_ports reset_button]
-set_property IOSTANDARD LVCMOS18 [get_ports blue_reset_button]
-set_property IOSTANDARD LVCMOS18 [get_ports red_reset_button]
+set_property IOSTANDARD LVCMOS33 [get_ports reset_button]
+set_property IOSTANDARD LVCMOS33 [get_ports blue_reset_button]
+set_property IOSTANDARD LVCMOS33 [get_ports red_reset_button]
 
 set_property IOSTANDARD LVCMOS18 [get_ports {ssDisp[0]}]
 set_property IOSTANDARD LVCMOS18 [get_ports {ssDisp[1]}]
