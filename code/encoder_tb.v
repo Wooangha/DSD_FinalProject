@@ -10,7 +10,7 @@ module encoder_tb ();
     wire [2:0] output_wire;
     reg [6:0] input_wire;
     
-    encoder8to3 e(input_wire, output_wire);
+    encoder7to3 e(input_wire, output_wire);
     
     initial begin
     

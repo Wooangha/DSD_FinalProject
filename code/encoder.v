@@ -1,7 +1,7 @@
 
 `timescale 1ms / 1us
 
-module encoder8to3 (
+module encoder7to3 (
     input  [6:0] in,
     output [2:0] out
 );

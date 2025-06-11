@@ -103,7 +103,7 @@ module master(
 
     assign bttns = {blue_reset_button, red_reset_button, decision, up, down, left, right};
 
-    encoder8to3 en(bttns, dir);
+    encoder7to3 en(bttns, dir);
     // delay_module dm(reset_n, dir, clk_8Hz, dir_out);
     state_transition st1(reset_n, dir, clk_8Hz, state);
     led_counter led_c(reset_n, clk_500Hz, led_s);
@@ -111,7 +111,19 @@ module master(
     decade_counter dc1(reset_n, clk_8Hz, ss_sel_tmp);
     bcd_to_7seg b71(ss_sel_tmp, ssDisp[6:0]);
     assign led_select = led_s;
-    assign ssSel = 4'b0001;
+    // assign ssDisp[6:0] = 7'b1111110;
+    // ssDisp : 0 - on, 1 - off
+    // ssDisp[6] = g
+    // ssDisp[5] = f
+    // ssDisp[4] = e
+    // ssDisp[3] = d
+    // ssDisp[2] = c
+    // ssDisp[1] = b
+    // ssDisp[0] = a
+    assign ssSel = 4'b1110;
+    // ssSel : 0 - on, 1 - off
+    // ssSel[3] = most right digit
+    // ssSel[0] = most left digit
     assign output_turn = ~state[9];
 
 
