@@ -84,7 +84,7 @@ def add_reset(input_path: str, output_path: str):
 
 def change2reg(input_path: str, output_path: str):
     """
-    S_R2-D2(2)와 S_B2-D2(2)를 각각 S_R2-D2와 S_B2-D2로 변경한다.
+    
     """
     df = pd.read_csv(input_path, sep=",")
     col = df.columns
@@ -177,8 +177,9 @@ def get_minterms(df: pd.DataFrame, d_num: int):
                 minterms.add(str2int(row['Present'] + input_num))
             elif row[check] == '0':
                 maxterms.add(str2int(row['Present'] + input_num))
-    doncares = {i for i in range(1<<13)} # 13 bits for 3 bits of input and 10 bits of state
-    doncares = doncares - minterms - maxterms
+    # doncares = {i for i in range(1<<13)} # 13 bits for 3 bits of input and 10 bits of state
+    # doncares = set()
+    # doncares = doncares - minterms - maxterms
     print(f"minterms: {minterms}")
     print(f"doncares: {doncares}")
     # res = qm(list(minterms), list(doncares))
@@ -200,6 +201,10 @@ def get_minterms_all(input_path: str, output_path: str):
                 f.write(f'd {dd}\n')
             # f.write(f'D{i}: {s}  \n')
     f.close()
+"""
+./qm_linux D_0_result.txt D_0_input.txt ; ./qm_linux D_1_result.txt D_1_input.txt ; ./qm_linux D_2_result.txt D_2_input.txt ; ./qm_linux D_3_result.txt D_3_input.txt ; ./qm_linux D_4_result.txt D_4_input.txt ; ./qm_linux D_5_result.txt D_5_input.txt ; ./qm_linux D_6_result.txt D_6_input.txt ; ./qm_linux D_7_result.txt D_7_input.txt ; ./qm_linux D_8_result.txt D_8_input.txt ; ./qm_linux D_9_result.txt D_9_input.txt
+"""
+
 
 if __name__ == "__main__":
     df = pd.read_csv("merged_state_transition.csv", sep=",")
