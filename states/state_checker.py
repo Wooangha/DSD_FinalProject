@@ -1,0 +1,84 @@
+
+
+# while True:
+def check_state(input_val: list[str], expected_val: list[str]):
+    # input_val, expected_val = input("Enter a value & expected value: ").split()
+
+    input_val = list(map(lambda x: 1 if x == '1' else 0, input_val))
+
+    A = input_val[0]
+    B = input_val[1]
+    C = input_val[2]
+    D = input_val[3]
+    E = input_val[4]
+    F = input_val[5]
+    G = input_val[6]
+    H = input_val[7]
+    I = input_val[8]
+    J = input_val[9]
+    K = input_val[10]
+    L = input_val[11]
+    M = input_val[12]
+
+    D0 = (C & ~D & ~E & ~F & G & ~H & ~I & ~J & ~K & L) | (C & ~D & ~E & ~F & G & ~H & ~I & ~J & K & ~L & ~M) | (C & E & ~F & G & ~H & J & ~K & ~L) | (C & E & ~F & G & ~H & ~I & J & ~K & ~M) | (C & E & ~F & G & ~H & J & K & L & M) | (C & E & ~F & G & ~H & I & ~J & ~K & L) | (C & D & ~F & G & ~H & J & ~K & ~L) | (C & D & ~F & G & ~H & ~I & J & ~K & ~M) | (C & D & ~F & G & ~H & J & K & L & M) | (C & D & ~F & G & ~H & I & ~J & ~K & L) | (B & ~C & ~D & ~E & F & ~H & ~I & ~J & ~K & L) | (B & ~C & ~D & ~E & F & ~H & ~I & ~J & K & ~L & ~M) | (B & ~C & E & G & H & ~I & ~K & M) | (B & ~C & E & G & H & ~I & J & ~K & ~L) | (B & ~C & E & F & ~H & ~I & J & ~K & L & ~M) | (B & ~C & E & F & ~H & I & ~J & ~K & L) | (B & ~C & E & F & ~H & I & J & ~K & ~L) | (B & ~C & E & F & H & ~I & ~K & M) | (B & ~C & E & F & H & ~I & J & ~K & ~L) | (B & ~C & D & G & H & ~I & ~K & M) | (B & ~C & D & G & H & ~I & J & ~K & ~L) | (B & ~C & D & F & ~H & ~I & J & ~K & L & ~M) | (B & ~C & D & F & ~H & I & ~J & ~K & L) | (B & ~C & D & F & ~H & I & J & ~K & ~L) | (B & ~C & D & F & H & ~I & ~K & M) | (B & ~C & D & F & H & ~I & J & ~K & ~L) | (B & ~C & E & G & ~H & J & K & L & M) | (B & ~C & D & F & ~I & J & K & L & M) | (B & ~C & D & F & ~H & I & J & L & M) | (B & ~C & E & G & ~H & J & ~K & ~L & M) | (B & E & ~F & G & ~H & I & ~K & L & M) | (C & D & ~F & G & ~H & I & ~K & L & M) | (B & ~C & E & G & ~I & J & K & L & M) | (B & ~C & E & F & ~H & I & J & L & M) | (B & ~C & D & G & ~H & J & ~K & ~L & M) | (B & ~C & D & G & ~H & I & ~J & ~K & L) | (B & ~C & ~D & ~E & G & ~H & ~I & ~J & ~K & L) | (B & ~C & E & G & ~H & ~I & J & ~K & L & ~M) | (B & ~C & E & G & ~H & I & J & ~K & ~L) | (B & ~C & E & F & ~H & J & ~K & ~L & M) | (B & ~C & E & F & ~I & J & K & L & M) | (B & ~C & D & G & ~H & J & K & L & M) | (C & E & ~F & G & ~H & I & ~K & L & M) | (B & ~C & ~D & ~E & G & ~H & ~I & ~J & K & ~L & ~M) | (B & ~C & E & G & ~H & I & ~J & ~K & L) | (B & ~C & D & G & ~H & ~I & J & ~K & L & ~M) | (B & ~C & D & G & ~I & J & K & L & M) | (B & ~C & D & G & ~H & I & ~K & L & M) | (B & ~C & D & G & ~H & I & J & ~K & ~L) | (B & ~C & D & F & ~H & J & ~K & ~L & M)
+    D1 = (C & E & ~F & G & ~H & J & ~K & L & M) | (C & E & ~F & G & ~H & I & ~K & ~L) | (C & E & ~F & G & ~H & I & L & M) | (C & E & ~F & G & ~H & I & J & ~K) | (C & D & ~F & G & ~H & J & ~K & L & M) | (C & D & ~F & G & ~H & I & ~K & ~L) | (C & D & ~F & G & ~H & I & L & M) | (C & D & ~F & G & ~H & I & J & ~K) | (B & ~C & E & G & H & ~I & J & ~K & ~L & M) | (B & ~C & E & F & ~H & J & ~K & L & M) | (B & ~C & E & F & ~H & I & ~K & M) | (B & ~C & E & F & ~H & I & L & M) | (B & ~C & E & F & ~H & I & J & ~K & L) | (B & ~C & E & F & H & ~I & J & ~K & ~L & M) | (B & ~C & D & G & H & ~I & J & ~K & ~L & M) | (B & ~C & D & F & ~H & J & ~K & L & M) | (B & ~C & D & F & ~H & I & ~K & M) | (B & ~C & D & F & ~H & I & L & M) | (B & ~C & D & F & ~H & I & J & ~K & L) | (B & ~C & D & F & H & ~I & J & ~K & ~L & M) | (B & ~C & E & G & ~H & I & ~K & M) | (B & ~C & D & G & ~H & I & L & M) | (B & ~C & E & G & ~H & J & ~K & L & M) | (B & ~C & E & G & ~H & I & L & M) | (B & ~C & E & G & ~H & I & J & ~K & L) | (B & ~C & D & G & ~H & I & ~K & M) | (B & ~C & D & G & ~H & J & ~K & L & M) | (B & ~C & D & G & ~H & I & J & ~K & L)
+    D2 = (B & ~C & E & G & ~H & I & ~K & ~L & ~M) | (B & ~C & E & G & H & ~I & ~K & ~M) | (B & ~C & E & G & H & ~I & L & M) | (B & ~C & E & F & ~H & I & ~K & ~L & ~M) | (B & ~C & E & F & H & ~I & ~K & ~M) | (B & ~C & E & F & H & ~I & L & M) | (B & ~C & D & G & ~H & I & ~K & ~L & ~M) | (B & ~C & D & G & H & ~I & ~K & ~M) | (B & ~C & D & G & H & ~I & L & M) | (B & ~C & D & F & ~H & I & ~K & ~L & ~M) | (B & ~C & D & F & H & ~I & ~K & ~M) | (B & ~C & D & F & H & ~I & L & M) | (B & ~C & E & G & ~H & J & ~K & ~L & ~M) | (B & ~C & D & F & ~H & J & ~K & ~L & ~M) | (B & ~C & E & F & ~H & J & ~K & ~L & ~M) | (B & ~C & D & G & ~H & J & ~K & ~L & ~M)
+    D3 = (C & ~D & ~E & ~F & G & ~H & ~I & ~J & ~K) | (C & ~D & ~E & ~F & G & ~H & ~I & ~J & ~L & ~M) | (C & ~D & ~E & ~F & G & ~H & ~I & ~J & L & M) | (C & E & ~F & G & ~H & J & ~K) | (C & E & ~F & G & ~H & J & L & M) | (C & E & ~F & G & ~H & I & ~K) | (C & E & ~F & G & ~H & I & L & M) | (C & ~D & E & ~F & G & ~H & I & J & ~L & ~M) | (C & D & ~F & G & ~H & J & ~K) | (C & D & ~F & G & ~H & J & L & M) | (C & D & ~F & G & ~H & I & ~K) | (C & D & ~E & ~F & G & ~H & I & ~J & ~L & ~M) | (C & D & ~F & G & ~H & I & L & M) | (C & D & E & ~F & G & ~H & ~I & J & ~L & ~M) | (B & ~C & ~D & ~E & G & ~H & ~I & ~J & ~K) | (B & ~C & ~D & ~E & G & ~H & ~I & ~J & ~L & ~M) | (B & ~C & ~D & ~E & G & ~H & ~I & ~J & L & M) | (B & ~C & E & G & H & ~I & ~K) | (B & ~C & E & G & H & ~I & ~L & ~M) | (B & ~C & E & G & H & ~I & L & M) | (B & ~C & E & F & ~H & J & K & ~L & ~M) | (B & ~C & E & F & H & ~I & K & ~L & ~M) | (B & ~C & E & G & ~H & I & ~K) | (B & ~C & E & G & ~H & I & L & M) | (B & ~C & D & G & H & ~I & ~K) | (B & ~C & D & ~F & G & H & ~I & ~J & ~L & ~M) | (B & ~C & D & G & H & ~I & L & M) | (B & ~C & D & F & ~H & J & K & ~L & ~M) | (B & ~C & D & G & ~H & I & ~K) | (B & ~C & D & G & ~H & I & L & M) | (B & ~C & D & F & G & ~I & J & ~L & ~M) | (B & E & ~F & G & ~H & J & ~L & ~M) | (B & D & ~F & G & ~H & J & ~L & ~M) | (B & ~C & E & G & ~H & J & ~K) | (B & ~C & D & G & ~H & J & ~K) | (B & ~C & E & G & ~H & J & L & M) | (B & ~C & D & G & ~H & J & L & M)
+    D4 = (~B & ~C & ~D & ~E & ~F & ~G & ~H & ~I & ~J & K & ~L) | (~B & ~C & ~D & ~E & ~F & ~G & ~H & ~I & ~J & K & ~M) | (C & ~D & ~E & ~F & G & ~H & ~I & ~J & K & ~L & M) | (C & ~D & ~E & ~F & G & ~H & ~I & ~J & K & L & ~M) | (C & E & ~F & G & ~H & J & K & ~L & M) | (C & E & ~F & G & ~H & J & K & L & ~M) | (C & E & ~F & G & ~H & I & K & ~L & M) | (C & E & ~F & G & ~H & I & K & L & ~M) | (C & D & ~F & G & ~H & J & K & ~L & M) | (C & D & ~F & G & ~H & J & K & L & ~M) | (C & D & ~F & G & ~H & I & K & ~L & M) | (C & D & ~F & G & ~H & I & K & L & ~M) | (B & ~C & ~D & ~E & F & ~H & ~I & ~J) | (B & ~C & E & G & H & ~I & K & ~L & M) | (B & ~C & E & G & H & ~I & K & L & ~M) | (B & ~C & E & F & ~H & I) | (B & ~C & E & F & H & ~I & ~K) | (B & ~C & E & F & H & ~I & M) | (B & ~C & E & F & H & ~I & L) | (B & ~C & D & G & H & ~I & K & ~L & M) | (B & ~C & D & G & H & ~I & K & L & ~M) | (B & ~C & D & F & ~H & I) | (B & ~C & D & ~E & F & ~G & H & ~I) | (B & ~C & D & ~E & F & H & ~I & ~J) | (B & ~C & D & F & ~I & J & ~K) | (B & ~C & E & F & ~H & J & M) | (B & ~C & E & G & ~H & I & K & ~L) | (B & ~C & D & F & ~I & J & L) | (B & ~C & D & G & ~H & I & K & ~M) | (B & ~C & E & G & ~H & J & K & L & ~M) | (B & ~C & E & F & ~H & J & ~K) | (B & ~C & D & G & ~H & J & K & ~L & M) | (B & E & ~F & G & ~H & I & ~J & K & ~M) | (B & D & ~F & G & ~H & I & J & K & ~L) | (B & ~C & ~D & ~E & G & ~H & ~I & ~J & K & ~L & M) | (B & ~C & ~D & ~E & G & ~H & ~I & ~J & K & L & ~M) | (B & ~C & E & G & ~H & J & K & ~L & M) | (B & ~C & E & F & ~H & J & L) | (B & ~C & D & G & ~H & J & K & L & ~M) | (B & ~C & D & G & ~H & I & K & ~L) | (B & ~C & D & ~E & ~F & G & H & ~I & J & K & ~L) | (B & ~C & D & F & ~H & J & M) | (B & ~C & D & E & ~F & G & H & ~I & ~J & K & ~L)
+    D5 = (C & ~D & ~E & ~F & G & ~H & ~I & ~J & ~K & L) | (C & E & ~F & G & ~H & J & ~K) | (C & E & ~F & G & ~H & J & L & M) | (C & E & ~F & G & ~H & I & ~K) | (C & E & ~F & G & ~H & I & L & M) | (B & ~D & ~E & ~F & G & ~H & ~I & ~J & ~K & L) | (B & ~C & ~D & ~E & F & ~G & ~H & ~I & ~J & ~K & L) | (B & ~C & E & G & H & ~I & ~K) | (B & ~C & E & G & H & ~I & L & M) | (B & ~C & E & F & ~H & I & ~K) | (B & ~C & E & F & ~H & I & L & M) | (B & ~C & E & F & H & ~I & ~K) | (B & ~C & E & F & H & ~I & L & M) | (B & ~C & E & G & ~H & J & ~K) | (B & ~C & E & G & ~H & I & ~K) | (B & ~C & E & F & ~H & J & ~K) | (B & ~C & E & G & ~H & J & L & M) | (B & ~C & E & G & ~H & I & L & M) | (B & ~C & E & F & ~H & J & L & M) | (B & ~C & ~D & ~E & G & ~H & ~I & ~J & ~K & L & M)
+    D6 = (C & ~D & ~E & ~F & G & ~H & ~I & ~J & ~K & L & M) | (C & ~D & ~E & ~F & G & ~H & ~I & ~J & K & ~L & ~M) | (C & D & ~F & G & ~H & J & ~K) | (C & D & ~F & G & ~H & J & L & M) | (C & D & ~F & G & ~H & I & ~K) | (C & D & ~F & G & ~H & I & L & M) | (B & ~C & ~D & ~E & F & ~H & ~I & ~J & ~K & L & M) | (B & ~C & ~D & ~E & F & ~H & ~I & ~J & K & ~L & ~M) | (B & ~C & ~D & ~E & F & G & ~H & ~I & ~J & ~K & L) | (B & ~C & D & G & H & ~I & ~K) | (B & ~C & D & G & H & ~I & L & M) | (B & ~C & D & F & ~H & I & ~K) | (B & ~C & D & F & ~H & I & L & M) | (B & ~C & D & F & H & ~I & ~K) | (B & ~C & D & F & H & ~I & L & M) | (B & ~C & D & G & ~H & J & ~K) | (B & ~C & D & G & ~H & I & ~K) | (B & ~C & D & F & ~H & J & ~K) | (B & ~C & D & G & ~H & J & L & M) | (B & ~C & D & G & ~H & I & L & M) | (B & ~C & D & F & ~H & J & L & M) | (B & ~C & ~D & ~E & G & ~H & ~I & ~J & ~K & L & M) | (B & ~C & ~D & ~E & G & ~H & ~I & ~J & K & ~L & ~M)
+    D7 = (C & ~D & ~E & ~F & G & ~H & ~I & ~J & ~K) | (C & ~D & ~E & ~F & G & ~H & ~I & ~J & ~L & ~M) | (C & ~D & ~E & ~F & G & ~H & ~I & ~J & L & M) | (C & E & ~F & G & ~H & J & ~K) | (C & E & ~F & G & ~H & J & L & M) | (C & E & ~F & G & ~H & I & ~K) | (C & E & ~F & G & ~H & I & L & M) | (C & ~D & E & ~F & G & ~H & I & J & ~L & ~M) | (C & D & ~F & G & ~H & J & ~K) | (C & D & ~F & G & ~H & J & L & M) | (C & D & ~F & G & ~H & I & ~K) | (C & D & ~E & ~F & G & ~H & I & ~J & ~L & ~M) | (C & D & ~F & G & ~H & I & L & M) | (C & D & E & ~F & G & ~H & ~I & J & ~L & ~M) | (B & ~C & E & ~F & G & H & ~I & K & ~L & ~M) | (B & ~C & E & F & ~G & H & ~I & K & ~L & ~M) | (B & ~C & D & ~F & G & H & ~I & K & ~L & ~M) | (B & ~C & D & G & H & ~I & J & K & ~L & ~M) | (B & ~C & E & G & H & ~I & ~J & K & ~L & ~M)
+    D8 = (~B & ~C & ~D & ~E & ~F & ~G & ~H & ~I & ~J & K & ~L) | (~B & ~C & ~D & ~E & ~F & ~G & ~H & ~I & ~J & K & ~M) | (C & ~D & ~E & ~F & G & ~H & ~I & ~J & K & ~L & M) | (C & ~D & ~E & ~F & G & ~H & ~I & ~J & K & L & ~M) | (C & E & ~F & G & ~H & J & K & ~L & M) | (C & E & ~F & G & ~H & J & K & L & ~M) | (C & E & ~F & G & ~H & I & K & ~L & M) | (C & E & ~F & G & ~H & I & K & L & ~M) | (C & D & ~F & G & ~H & J & K & ~L & M) | (C & D & ~F & G & ~H & J & K & L & ~M) | (B & ~C & ~D & ~E & F & ~H & ~I & ~J) | (B & ~C & E & G & H & ~I & ~K) | (B & ~C & E & G & H & ~I & M) | (B & ~C & E & G & H & ~I & L) | (B & ~C & E & F & ~H & J) | (B & ~C & E & F & ~H & I) | (B & ~C & E & F & H & ~I & ~K) | (B & ~C & E & F & H & ~I & M) | (B & ~C & E & F & H & ~I & L) | (B & ~C & ~D & E & F & G & ~I & J) | (B & ~C & D & G & ~H & I) | (B & ~C & D & G & H & ~I & ~K) | (B & ~C & D & G & H & ~I & M) | (B & ~C & D & G & H & ~I & L) | (B & ~C & D & ~E & ~F & G & ~I & J) | (B & ~C & D & F & ~H & I) | (B & ~C & D & ~E & F & H & ~I & ~J) | (B & ~C & D & E & ~F & G & H & ~I & ~J) | (B & ~D & ~E & ~F & G & ~H & ~I & ~J) | (B & ~D & E & ~F & G & ~H & ~I & J) | (B & E & ~F & G & ~H & I & ~J) | (B & D & ~E & ~F & G & ~H & J) | (B & D & ~F & G & ~H & I & ~K) | (B & ~C & E & G & ~H & J) | (B & ~C & D & ~E & F & ~G & ~I & J) | (B & E & ~F & G & ~H & J & ~K) | (B & ~C & D & G & ~H & J) | (B & E & ~F & G & ~H & J & M) | (~B & C & D & ~E & ~F & G & ~H & I & ~J & K & ~L) | (C & D & ~F & G & ~H & I & K & L & ~M) | (B & D & ~F & G & ~H & I & M) | (~B & C & ~D & E & ~F & G & ~H & I & J & K & ~L) | (~B & C & D & E & ~F & G & ~H & ~I & J & K & ~L) | (B & D & ~F & G & ~H & I & J)
+    D9 = (~B & ~C & ~D & ~E & ~F & ~G & ~H & ~I & ~J & K & ~L & M) | (~A & C & ~D & ~E & ~F & G & ~H & ~I & ~J & ~K & L) | (~A & C & ~D & ~E & ~F & G & ~H & ~I & ~J & K & ~L) | (C & E & ~F & G & ~H & J & K & ~L & M) | (C & E & ~F & G & ~H & I & K & ~L & M) | (C & D & ~F & G & ~H & J & K & ~L & M) | (C & D & ~F & G & ~H & I & K & ~L & M) | (~A & B & ~C & ~D & ~E & F & ~H & ~I & ~J & ~K & L) | (~A & B & ~C & ~D & ~E & F & ~H & ~I & ~J & K & ~L) | (~A & B & ~C & E & F & ~H & I & K & ~L) | (~A & B & ~C & D & G & ~H & I & K & ~L) | (~A & B & ~C & D & ~E & ~F & G & H & ~I & ~J & K & ~L) | (~A & B & ~C & D & F & ~H & J & K & ~L) | (~A & B & ~C & D & F & ~H & I & K & ~L) | (B & ~C & D & F & H & ~I & K & ~L & M) | (~A & B & ~C & D & F & G & ~I & J & K & ~L) | (~A & B & ~D & E & ~F & G & ~H & ~I & J & K & ~L) | (~A & B & E & ~F & G & ~H & I & ~J & K & ~L) | (~A & B & D & ~E & ~F & G & ~H & J & K & ~L) | (A & ~B & ~C & ~D & ~E & ~F & ~G & ~H & ~I & ~J & ~K) | (A & ~B & ~C & ~D & ~E & ~F & ~G & ~H & ~I & ~J & ~L) | (A & ~B & ~C & ~D & ~E & ~F & ~G & ~H & ~I & ~J & M) | (A & C & ~D & ~E & ~F & G & ~H & ~I & ~J & ~K & ~L) | (A & C & ~D & ~E & ~F & G & ~H & ~I & ~J & K & M) | (A & C & E & ~F & G & ~H & J & ~K) | (A & ~B & C & E & ~F & G & ~H & J & ~L) | (A & C & E & ~F & G & ~H & J & M) | (A & C & E & ~F & G & ~H & I & ~K) | (A & ~B & C & E & ~F & G & ~H & I & ~L) | (A & C & E & ~F & G & ~H & I & M) | (A & C & D & ~F & G & ~H & J & ~K) | (A & ~B & C & D & ~F & G & ~H & J & ~L) | (A & C & D & ~F & G & ~H & J & M) | (A & C & D & ~F & G & ~H & I & ~K) | (A & C & D & ~F & G & ~H & I & M) | (A & B & ~C & ~D & ~E & F & ~H & ~I & ~J & ~K & ~L) | (A & B & ~C & ~D & ~E & F & ~H & ~I & ~J & K & M) | (A & B & ~C & E & G & H & ~I & ~K) | (A & B & ~C & E & G & H & ~I & M) | (A & B & ~C & E & F & ~H & I & ~K) | (A & B & ~C & E & F & ~H & I & M) | (A & B & ~C & E & F & H & ~I & ~K) | (A & B & ~C & E & F & H & ~I & M) | (A & B & ~C & ~D & E & G & H & ~I & J & ~L) | (A & B & ~C & D & G & H & ~I & ~K) | (A & B & ~C & D & G & H & ~I & M) | (A & B & ~C & D & ~E & ~F & G & H & ~I & J & ~L) | (A & B & ~C & D & F & ~H & I & ~K) | (A & B & ~C & D & F & ~H & I & M) | (A & B & ~C & D & F & H & ~I & ~K) | (A & B & ~C & D & F & H & ~I & M) | (A & B & ~C & D & ~E & F & ~G & H & ~I & ~L) | (A & B & ~C & D & ~E & F & H & ~I & ~J & ~L) | (A & B & ~C & D & E & ~F & G & H & ~I & ~J & ~L) | (A & C & ~D & E & ~F & G & ~H & I & J & ~L) | (A & C & D & ~E & ~F & G & ~H & I & ~J & ~L) | (A & C & D & E & ~F & G & ~H & ~I & J & ~L) | (A & B & ~C & E & G & ~H & J & ~K) | (A & B & ~C & D & G & ~H & J & M) | (A & B & ~C & E & G & ~H & I & M) | (A & B & ~C & E & F & ~H & J & M) | (A & B & ~C & D & G & ~H & I & ~K) | (A & B & ~C & D & F & ~H & J & ~K) | (~A & B & ~C & E & ~F & G & ~I & J & K & ~L) | (~A & B & ~C & E & F & ~G & H & ~I & K & ~L) | (~A & B & ~C & E & G & ~H & J & K & ~L) | (~A & B & ~C & ~D & E & G & H & ~I & ~J & K & ~L) | (~A & B & ~C & ~D & ~E & G & ~H & ~I & ~J & ~K & L) | (~A & B & ~C & ~D & ~E & G & ~H & ~I & ~J & K & ~L) | (B & ~C & E & G & ~I & J & K & ~L & M) | (~A & B & ~C & E & F & ~G & ~I & J & K & ~L) | (B & ~C & D & G & H & ~I & K & ~L & M) | (A & B & ~C & ~D & ~E & G & ~H & ~I & ~J & ~K & ~L) | (A & B & ~C & ~D & ~E & G & ~H & ~I & ~J & K & M) | (A & B & ~C & E & G & ~H & I & ~K) | (A & B & ~C & E & F & ~H & J & ~K) | (A & B & ~C & D & G & ~H & J & ~K) | (A & B & ~C & D & G & ~H & I & M) | (A & B & ~C & D & F & ~H & J & M) | (~A & B & ~C & E & F & H & ~I & ~J & K & ~L) | (~A & B & D & ~F & G & ~H & I & J & K & ~L) | (A & B & ~C & E & G & ~H & J & M)
+
+    # print("D0:", D0)
+    # print("D1:", D1)
+    # print("D2:", D2)
+    # print("D3:", D3)
+    # print("D4:", D4)
+    # print("D5:", D5)
+    # print("D6:", D6)
+    # print("D7:", D7)
+    # print("D8:", D8)
+    # print("D9:", D9)
+
+    DList = [D9, D8, D7, D6, D5, D4, D3, D2, D1, D0]
+
+    def make_str(ls: list[int]) -> str:
+        return ''.join(map(str, ls))
+
+    # print('total: ', make_str(DList))
+    # print('Check: ', make_str(DList) == expected_val)
+    s = make_str(DList)
+    if s != expected_val:
+        print(f"Expected: {expected_val}, but got: {s}")
+    return s == expected_val
+
+"""
+import state_checker as sc
+sc.check_states()
+"""
+
+def check_states():
+    import pandas as pd
+
+    df = pd.read_csv('DFF.csv', sep=',', dtype=str)
+
+    for i in range(len(df)):
+        row = df.iloc[i]
+        col = df.columns
+        present = row['Present']
+        for c in col:
+            if c == 'Present':
+                continue
+            elif len(c) == 3:
+                print(f"Checking row {i + 1}, column {c} with present state: {present}")
+                now_state = present + c
+                expected_val = row[c]
+                # if not check_state(now_state, expected_val):
+                #     print(f"Error in row {i + 1}, column {c}: Expected {expected_val}, but got {now_state}")
+                check_state(now_state, expected_val)
+            # else:
+            #     break
+    print("All states checked successfully.")
+
