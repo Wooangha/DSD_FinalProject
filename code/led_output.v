@@ -13,25 +13,25 @@ module led_additional (
     wire A, B, C, D, E, F, G, H, I, J, K, L, M;
     assign {A, B, C, D, E, F, G, H, I, J, K, L, M} = {state, led_sel};
 
-    assign led_out[16] = (~H & ~I & J & K & ~L) | (~A & I & J & ~K & M);
-    assign led_out[15] = (~A & ~C & J & ~L) | (~C & ~J & ~K & ~M) | (~B & ~I & J & ~K & ~M) | (~A & ~B & I & J & M);
-    assign led_out[14] = (~C & I & ~J) | (~A & ~H & ~J & ~K & L) | (~A & ~B & ~J & L & M) | (~B & I & ~J & ~K & ~M) | (I & ~J & K & ~L);
-    assign led_out[13] = (~C & ~J & ~L & M) | (~C & J & ~K & ~M) | (~A & ~B & ~I & L & M) | (~B & I & J & ~K & ~M);
-    assign led_out[12] = (~A & ~H & ~I & ~K & L) | (I & J & K & ~L);
-    assign led_out[11] = (~C & ~F & ~L & ~M) | (~H & ~I & J & K & ~L);
-    assign led_out[10] = (~C & ~J & ~K & ~M) | (~B & ~I & J & ~K & ~M) | (~A & ~B & I & J & M);
-    assign led_out[9] = (~G & ~L & ~M) | (B & I & ~J & K) | (~B & ~K & M) | (B & ~H & K & M) | (~B & ~J & M);
-    assign led_out[8] = (~C & J & ~K & ~M) | (~A & ~B & ~I & L & M) | (~B & I & J & ~K & ~M);
-    assign led_out[7] = (F & G & ~L & ~M) | (I & J & K & ~L);
+    assign led_out[16] = (~A & B & ~C & E & F & ~H & I & J & ~K & L & M) | (~A & B & ~C & D & F & ~H & I & J & ~K & L & M) | (~A & B & C & E & ~F & G & ~H & ~I & J & K & ~L & ~M) | (~A & B & E & ~F & G & ~H & I & J & ~K & L & M) | (~A & B & C & D & ~F & G & ~H & ~I & J & K & ~L & ~M) | (~A & B & D & ~F & G & ~H & I & J & ~K & L & M) | (A & B & ~C & E & G & ~H & ~I & J & K & ~L & ~M) | (A & B & ~C & E & F & ~H & ~I & J & K & ~L & ~M) | (A & B & ~C & D & G & ~H & ~I & J & K & ~L & ~M) | (A & B & ~C & D & F & ~H & ~I & J & K & ~L & ~M);
+    assign led_out[15] = (~A & ~B & C & E & ~F & G & ~H & I & J & K & L & M) | (~A & ~B & C & D & ~F & G & ~H & I & J & K & L & M) | (~A & B & ~C & E & G & H & ~I & J & K & ~L & M) | (~A & B & ~C & E & F & H & ~I & J & K & ~L & M) | (~A & B & ~C & D & G & H & ~I & J & K & ~L & M) | (~A & B & ~C & D & F & H & ~I & J & K & ~L & M) | (A & ~B & C & E & ~F & G & ~H & ~I & J & ~K & ~L & ~M) | (A & ~B & C & D & ~F & G & ~H & ~I & J & ~K & ~L & ~M) | (A & B & ~C & E & G & H & ~I & ~J & ~K & L & ~M) | (A & B & ~C & D & G & H & ~I & ~J & ~K & L & ~M) | (A & B & ~C & D & F & H & ~I & ~J & ~K & L & ~M);
+    assign led_out[14] = (~A & ~B & C & E & ~F & G & ~H & I & ~J & K & L & M) | (~A & ~B & C & D & ~F & G & ~H & I & ~J & K & L & M) | (~A & B & ~C & E & F & ~H & I & ~J & ~K & L & M) | (~A & B & ~C & D & F & ~H & I & ~J & ~K & L & M) | (~A & B & E & ~F & G & ~H & I & ~J & ~K & L & M) | (~A & B & C & E & ~F & G & ~H & I & ~J & K & ~L & ~M) | (~A & B & D & ~F & G & ~H & I & ~J & ~K & L & M) | (~A & B & C & D & ~F & G & ~H & I & ~J & K & ~L & ~M) | (A & ~B & C & E & ~F & G & ~H & I & ~J & ~K & ~L & ~M) | (A & ~B & C & D & ~F & G & ~H & I & ~J & ~K & ~L & ~M) | (A & B & ~C & E & G & ~H & I & ~J & K & ~L & ~M) | (A & B & ~C & E & F & ~H & I & ~J & K & ~L & ~M) | (A & B & ~C & D & G & ~H & I & ~J & K & ~L & ~M) | (A & B & ~C & D & F & ~H & I & ~J & K & ~L & ~M);
+    assign led_out[13] = (~A & ~B & C & E & ~F & G & ~H & ~I & J & K & L & M) | (~A & ~B & C & D & ~F & G & ~H & ~I & J & K & L & M) | (~A & B & ~C & E & G & H & ~I & ~J & K & ~L & M) | (~A & B & ~C & E & F & H & ~I & ~J & K & ~L & M) | (~A & B & ~C & D & G & H & ~I & ~J & K & ~L & M) | (~A & B & ~C & D & F & H & ~I & ~J & K & ~L & M) | (A & ~B & C & E & ~F & G & ~H & I & J & ~K & ~L & ~M) | (A & ~B & C & D & ~F & G & ~H & I & J & ~K & ~L & ~M) | (A & B & ~C & E & G & H & ~I & J & ~K & L & ~M) | (A & B & ~C & D & G & H & ~I & J & ~K & L & ~M) | (A & B & ~C & D & F & H & ~I & J & ~K & L & ~M);
+    assign led_out[12] = (~A & B & ~C & E & F & ~H & ~I & J & ~K & L & M) | (~A & B & ~C & D & F & ~H & ~I & J & ~K & L & M) | (~A & B & E & ~F & G & ~H & ~I & J & ~K & L & M) | (~A & B & C & E & ~F & G & ~H & I & J & K & ~L & ~M) | (~A & B & D & ~F & G & ~H & ~I & J & ~K & L & M) | (~A & B & C & D & ~F & G & ~H & I & J & K & ~L & ~M) | (A & B & ~C & E & G & ~H & I & J & K & ~L & ~M) | (A & B & ~C & E & F & ~H & I & J & K & ~L & ~M) | (A & B & ~C & D & G & ~H & I & J & K & ~L & ~M) | (A & B & ~C & D & F & ~H & I & J & K & ~L & ~M);
+    assign led_out[11] = (~A & B & ~C & ~D & ~E & ~F & G & ~H & ~I & ~J & K & ~L & ~M) | (~A & B & C & E & ~F & G & ~H & ~I & J & K & ~L & ~M) | (~A & B & C & D & ~F & G & ~H & ~I & J & K & ~L & ~M) | (A & B & ~C & E & ~F & G & ~H & I & K & ~L & ~M) | (A & B & ~C & E & ~F & G & H & ~I & K & ~L & ~M) | (A & B & ~C & E & F & ~H & ~I & J & K & ~L & ~M) | (A & B & ~C & D & ~F & G & ~H & I & K & ~L & ~M) | (A & B & ~C & D & ~F & G & H & ~I & K & ~L & ~M) | (A & B & ~C & D & F & ~H & ~I & J & K & ~L & ~M) | (A & B & ~C & E & ~F & G & ~H & J & K & ~L & ~M) | (A & B & ~C & D & ~F & G & ~H & J & K & ~L & ~M);
+    assign led_out[10] = (~A & ~B & C & E & ~F & G & ~H & I & J & K & L & M) | (~A & ~B & C & D & ~F & G & ~H & I & J & K & L & M) | (A & ~B & C & E & ~F & G & ~H & ~I & J & ~K & ~L & ~M) | (A & ~B & C & D & ~F & G & ~H & ~I & J & ~K & ~L & ~M) | (A & B & ~C & E & G & H & ~I & ~J & ~K & L & ~M) | (A & B & ~C & D & G & H & ~I & ~J & ~K & L & ~M) | (A & B & ~C & D & F & H & ~I & ~J & ~K & L & ~M);
+    assign led_out[9] = (~A & ~B & C & ~D & ~E & ~F & G & ~H & ~I & ~J & ~K & ~L & M) | (~A & C & E & ~F & G & ~H & I & ~J & K & L & M) | (~A & C & D & ~F & G & ~H & I & ~J & K & L & M) | (~A & B & ~C & ~D & ~E & F & ~G & ~H & ~I & ~J & K & ~L & ~M) | (~A & B & C & E & ~F & G & ~H & J & K & L & M) | (~A & B & C & E & ~F & G & ~H & I & ~J & K & ~L & ~M) | (~A & B & C & D & ~F & G & ~H & J & K & L & M) | (~A & B & C & D & ~F & G & ~H & I & ~J & K & ~L & ~M) | (A & ~B & C & ~D & ~E & ~F & G & ~H & ~I & ~J & K & L & M) | (A & ~B & C & E & ~F & G & ~H & J & ~K & ~L & M) | (A & ~B & C & E & ~F & G & ~H & I & ~K & ~L & M) | (A & ~B & C & D & ~F & G & ~H & J & ~K & ~L & M) | (A & ~B & C & D & ~F & G & ~H & I & ~K & ~L & M) | (A & B & ~C & E & G & ~H & I & ~J & K & ~L & ~M) | (A & B & ~C & E & F & ~G & H & ~I & K & ~L & ~M) | (A & B & ~C & D & G & ~H & I & ~J & K & ~L & ~M) | (A & B & ~C & D & F & ~G & H & ~I & K & ~L & ~M) | (A & B & ~C & E & F & ~G & ~H & J & K & ~L & ~M) | (A & B & ~C & D & F & ~G & ~H & I & K & ~L & ~M) | (A & B & ~C & E & F & ~G & ~H & I & K & ~L & ~M) | (A & B & ~C & D & F & ~G & ~H & J & K & ~L & ~M);
+    assign led_out[8] = (~A & ~B & C & E & ~F & G & ~H & ~I & J & K & L & M) | (~A & ~B & C & D & ~F & G & ~H & ~I & J & K & L & M) | (A & ~B & C & E & ~F & G & ~H & I & J & ~K & ~L & ~M) | (A & ~B & C & D & ~F & G & ~H & I & J & ~K & ~L & ~M) | (A & B & ~C & E & G & H & ~I & J & ~K & L & ~M) | (A & B & ~C & D & G & H & ~I & J & ~K & L & ~M) | (A & B & ~C & D & F & H & ~I & J & ~K & L & ~M);
+    assign led_out[7] = (~A & B & ~C & ~D & ~E & F & G & ~H & ~I & ~J & K & ~L & ~M) | (~A & B & C & E & ~F & G & ~H & I & J & K & ~L & ~M) | (~A & B & C & D & ~F & G & ~H & I & J & K & ~L & ~M) | (A & B & ~C & E & G & ~H & I & J & K & ~L & ~M) | (A & B & ~C & E & F & ~H & I & J & K & ~L & ~M) | (A & B & ~C & E & F & G & ~H & I & K & ~L & ~M) | (A & B & ~C & E & F & G & H & ~I & K & ~L & ~M) | (A & B & ~C & D & G & ~H & I & J & K & ~L & ~M) | (A & B & ~C & D & F & ~H & I & J & K & ~L & ~M) | (A & B & ~C & D & F & G & ~H & I & K & ~L & ~M) | (A & B & ~C & D & F & G & H & ~I & K & ~L & ~M) | (A & B & ~C & E & F & G & ~H & J & K & ~L & ~M) | (A & B & ~C & D & F & G & ~H & J & K & ~L & ~M);
 
     assign led_out[6] = ~state[9];
     assign led_out[5] = state[9];
 
-    assign led_out[4] = (~C & ~F & ~K & M) | (~A & ~H & ~I & ~K & L);
-    assign led_out[3] = (~C & ~J & ~L & M) | (~A & ~B & ~I & L & M) | (~B & I & J & ~K & ~M);
-    assign led_out[2] = (~G & ~K & M) | (~A & I & ~J & ~K) | (~B & L & ~M) | (~A & ~K & ~M) | (~B & ~J & ~M);
-    assign led_out[1] = (~A & ~C & J & ~L) | (~B & ~I & J & ~K & ~M) | (~A & ~B & I & J & M);
-    assign led_out[0] = (F & G & ~K & M) | (~A & I & J & ~K & M);
+    assign led_out[4] = (~A & B & ~C & E & ~F & G & ~H & I & ~K & L & M) | (~A & B & ~C & E & ~F & G & H & ~I & ~K & L & M) | (~A & B & ~C & E & F & ~H & ~I & J & ~K & L & M) | (~A & B & ~C & D & ~F & G & ~H & I & ~K & L & M) | (~A & B & ~C & D & ~F & G & H & ~I & ~K & L & M) | (~A & B & ~C & D & F & ~H & ~I & J & ~K & L & M) | (~A & B & E & ~F & G & ~H & ~I & J & ~K & L & M) | (~A & B & D & ~F & G & ~H & ~I & J & ~K & L & M) | (A & B & ~C & ~D & ~E & ~F & G & ~H & ~I & ~J & ~K & L & M);
+    assign led_out[3] = (~A & ~B & C & E & ~F & G & ~H & ~I & J & K & L & M) | (~A & ~B & C & D & ~F & G & ~H & ~I & J & K & L & M) | (~A & B & ~C & E & G & H & ~I & ~J & K & ~L & M) | (~A & B & ~C & E & F & H & ~I & ~J & K & ~L & M) | (~A & B & ~C & D & G & H & ~I & ~J & K & ~L & M) | (~A & B & ~C & D & F & H & ~I & ~J & K & ~L & M) | (A & ~B & C & E & ~F & G & ~H & I & J & ~K & ~L & ~M) | (A & ~B & C & D & ~F & G & ~H & I & J & ~K & ~L & ~M);
+    assign led_out[2] = (~A & ~B & C & E & ~F & G & ~H & J & K & L & ~M) | (~A & ~B & C & E & ~F & G & ~H & I & K & L & ~M) | (~A & ~B & C & D & ~F & G & ~H & J & K & L & ~M) | (~A & ~B & C & D & ~F & G & ~H & I & K & L & ~M) | (~A & B & ~C & E & F & ~G & H & ~I & ~K & L & M) | (~A & B & ~C & D & F & ~G & H & ~I & ~K & L & M) | (~A & B & C & E & ~F & G & ~H & J & ~K & ~L & ~M) | (~A & B & C & E & ~F & G & ~H & I & ~K & ~L & ~M) | (~A & B & E & ~F & G & ~H & I & ~J & ~K & L & M) | (~A & B & C & D & ~F & G & ~H & J & ~K & ~L & ~M) | (~A & B & C & D & ~F & G & ~H & I & ~K & ~L & ~M) | (~A & B & D & ~F & G & ~H & I & ~J & ~K & L & M) | (A & ~B & C & ~D & ~E & ~F & G & ~H & ~I & ~J & ~K & ~L & ~M) | (A & ~B & C & ~D & ~E & ~F & G & ~H & ~I & ~J & K & L & ~M) | (A & ~B & C & E & ~F & G & ~H & I & ~J & ~K & ~L & ~M) | (A & ~B & C & D & ~F & G & ~H & I & ~J & ~K & ~L & ~M) | (A & B & ~C & ~D & ~E & F & ~G & ~H & ~I & ~J & ~K & L & M) | (~A & B & ~C & E & F & ~G & ~H & J & ~K & L & M) | (~A & B & ~C & E & F & ~H & I & ~J & ~K & L & M) | (~A & B & ~C & D & F & ~G & ~H & J & ~K & L & M) | (~A & B & ~C & D & F & ~H & I & ~J & ~K & L & M);
+    assign led_out[1] = (~A & ~B & C & E & ~F & G & ~H & I & J & K & L & M) | (~A & ~B & C & D & ~F & G & ~H & I & J & K & L & M) | (~A & B & ~C & E & G & H & ~I & J & K & ~L & M) | (~A & B & ~C & E & F & H & ~I & J & K & ~L & M) | (~A & B & ~C & D & G & H & ~I & J & K & ~L & M) | (~A & B & ~C & D & F & H & ~I & J & K & ~L & M) | (A & ~B & C & E & ~F & G & ~H & ~I & J & ~K & ~L & ~M) | (A & ~B & C & D & ~F & G & ~H & ~I & J & ~K & ~L & ~M);
+    assign led_out[0] = (~A & B & ~C & E & F & ~H & I & J & ~K & L & M) | (~A & B & ~C & E & F & G & ~H & I & ~K & L & M) | (~A & B & ~C & E & F & G & H & ~I & ~K & L & M) | (~A & B & ~C & D & F & ~H & I & J & ~K & L & M) | (~A & B & ~C & D & F & G & ~H & I & ~K & L & M) | (~A & B & ~C & D & F & G & H & ~I & ~K & L & M) | (~A & B & E & ~F & G & ~H & I & J & ~K & L & M) | (~A & B & D & ~F & G & ~H & I & J & ~K & L & M) | (A & B & ~C & ~D & ~E & F & G & ~H & ~I & ~J & ~K & L & M) | (~A & B & ~C & E & F & G & ~H & J & ~K & L & M) | (~A & B & ~C & D & F & G & ~H & J & ~K & L & M);
 
 endmodule
 
@@ -51,9 +51,9 @@ module basicled (
     assign led [11]= (~cot[2])&cot[1]&cot[0];
     assign led [10]= cot[2]&(~cot[1])&cot[0];
     assign led [9]= (~cot[2])&(~cot[1])&(~cot[0])|(~cot[2])&cot[1]&cot[0]|cot[2]&cot[1]&(~cot[0]);
-    assign led [8]= 0;
+    assign led [8]= cot[2]&(~cot[1])&cot[0];
     assign led [7]= (~cot[2])&cot[1]&cot[0];
-    assign led [6]= cot[2]&(~cot[1])&cot[0];
+    assign led [6]= 0;
     assign led [5]= 0;
     assign led [4]= cot[2]&(~cot[1])&(~cot[0]);
     assign led [3]= (~cot[2])&cot[1]&(~cot[0]);
@@ -82,5 +82,6 @@ module led_output (
         .led(default_led_out)
     );
     assign led_out = ~(additional_led_out | default_led_out);
+    // assign led_out = ~default_led_out;
     
 endmodule
