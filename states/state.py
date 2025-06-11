@@ -81,7 +81,10 @@ def add_reset(input_path: str, output_path: str):
     df["Next_INPUT=reset_red"] = ["S_B2-D2(2)"] * len(df)
     df.to_csv(output_path, index=False, encoding='utf-8-sig')
 
-
+"""
+import state as st
+st.change2reg("final_state_transition.csv", "reg_transition.csv")
+"""
 def change2reg(input_path: str, output_path: str):
     """
     
@@ -142,6 +145,10 @@ def change2reg(input_path: str, output_path: str):
         df[c] = df[c].apply(parser)
     df.to_csv(output_path, index=False, encoding='utf-8-sig')
 
+"""
+import state as st
+st.add_dff("reg_transition.csv", "DFF.csv")
+"""
 def add_dff(input_path: str, output_path: str):
     """
     DFF를 추가한다.
