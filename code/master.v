@@ -108,9 +108,52 @@ module master(
     state_transition st1(reset_n, dir, clk_8Hz, state);
     led_counter led_c(reset_n, clk_500Hz, led_s);
     led_output led_op(state, led_s, led_out);
-    decade_counter dc1(reset_n, clk_8Hz, ss_sel_tmp);
-    bcd_to_7seg b71(ss_sel_tmp, ssDisp[6:0]);
     assign led_select = led_s;
+
+
+    wire [1:0] ssCounter;
+    two_bit_counter ss_counter(
+        .reset_n(reset_n),
+        .clk(clk_500Hz),
+        .count_out(ssCounter)
+    );
+    wire [1:0] score;
+    score_up sup(dir, state, score);
+
+    wire [7:0] blue_score;
+    wire [7:0] red_score;
+
+    decade_counter_2digits dcb(reset_n, red_reset_button, blue_reset_button, score[0], blue_score);
+    decade_counter_2digits dcr(reset_n, red_reset_button, blue_reset_button, score[1], red_score);
+
+    wire [3:0] dispScore;
+
+    four_to_one_mux mux0(
+        .a({red_score[0], red_score[4], blue_score[0], blue_score[4]}),
+        .sel(ssCounter),
+        .out(dispScore[0]) 
+    );
+    four_to_one_mux mux1(
+        .a({red_score[1], red_score[5], blue_score[1], blue_score[5]}),
+        .sel(ssCounter),
+        .out(dispScore[1]) 
+    );
+    four_to_one_mux mux2(
+        .a({red_score[2], red_score[6], blue_score[2], blue_score[6]}),
+        .sel(ssCounter),
+        .out(dispScore[2]) 
+    );
+    four_to_one_mux mux3(
+        .a({red_score[3], red_score[7], blue_score[3], blue_score[7]}),
+        .sel(ssCounter),
+        .out(dispScore[3]) 
+    );
+
+    bcd_to_7seg ssd(
+        .bcd_in(dispScore),
+        .seg7_out(ssDisp[6:0])
+    );
+
     // assign ssDisp[6:0] = 7'b1111110;
     // ssDisp : 0 - on, 1 - off
     // ssDisp[6] = g
@@ -120,7 +163,13 @@ module master(
     // ssDisp[2] = c
     // ssDisp[1] = b
     // ssDisp[0] = a
-    assign ssSel = 4'b1110;
+
+    // assign ssSel = 4'b1110;
+    two_to_four_decoder ss_sel(
+        .in(ssCounter),
+        .out(ssSel)
+    );
+
     // ssSel : 0 - on, 1 - off
     // ssSel[3] = most right digit
     // ssSel[0] = most left digit

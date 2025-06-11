@@ -24,14 +24,22 @@ module decade_counter(input reset_n, input clk, output [3:0] count);
 
 endmodule
 
-module decade_counter_2digits(input reset_n, input clk, output [7:0] count);
-
+module decade_counter_2digits(
+    input reset_n, 
+    input red_reset_button, 
+    input blue_reset_button, 
+    input clk, 
+    output [7:0] count
+);
     wire [3:0] count1, count2;
-    decade_counter unit_counter(reset_n, clk, count1);
+    wire reset = reset_n & ~(red_reset_button | blue_reset_button);
+
+    decade_counter unit_counter(reset, clk, count1);
+
 
     wire tens_clk;
-    assign tens_clk = (~reset_n & clk) | (reset_n & count1[3] & ~count1[2] & ~count1[1] & count1[0]);
-    decade_counter tens_counter(reset_n, tens_clk, count2);
+    assign tens_clk = (~reset & clk) | (reset & count1[3] & ~count1[2] & ~count1[1] & count1[0]);
+    decade_counter tens_counter(reset, tens_clk, count2);
     assign count = {count2, count1};
 
 endmodule

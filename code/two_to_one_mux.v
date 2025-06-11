@@ -12,3 +12,14 @@ module two_to_one_mux(
 
 endmodule
 
+module four_to_one_mux(
+    input wire [3:0] a,
+    input wire [1:0] sel,
+    output wire out
+);
+    assign out = (~sel[1] & ~sel[0] & a[0]) |
+                  (~sel[1] & sel[0] & a[1]) |
+                  (sel[1] & ~sel[0] & a[2]) |
+                  (sel[1] & sel[0] & a[3]);
+
+endmodule
